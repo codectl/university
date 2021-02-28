@@ -1,3 +1,3 @@
 # Playbooks
 
-## Small projects implemented in various programming languages
+Small projects implemented in various programming languages
