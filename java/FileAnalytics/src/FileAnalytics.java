@@ -8,34 +8,64 @@ public class FileAnalytics {
 
   public static void main(String[] args) throws IOException {
 
-    // enter data using BufferReader
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-    // location for the sample file
-    File sample = new File(System.getProperty("user.dir"), "resources/sample.txt");
-    File file;
-
-    System.out.printf("File to process [%s]: ", sample.getAbsolutePath());
-
-    // reading file name
-    String filename = reader.readLine().replace("\n", "");
-    file = filename.isEmpty() ? sample : new File(filename);
-
-    // the processor object
-    FileAnalytics processor = new FileAnalytics(file);
+    // Start off the program
+    start();
   }
 
   /**
    * Start the interactive program
    */
-  private void start() {
-    System.out.println("Welcome to the FileAnalytics tool. A program that given a file," +
-        "provides you with a serious of statistics of your choice.");
+  private static void start() throws IOException {
 
+    // user input
     Scanner in = new Scanner(System.in);
 
-    System.out.print("Choose your option [1-3]: ");
+    // start the user interaction with initial instructions
+    System.out.println(
+        "\n*** Welcome to the FileAnalytics ***\n" +
+            "A tool that given a file, provides you with a\n" +
+            "serious of statistics of your choice.\n\n" +
+            "Start off by providing the file path you wish to process.\n" +
+            "If none is specified, a sample text is provided for you.\n"
+    );
 
+    // location for the sample file
+    File sample = new File(System.getProperty("user.dir"), "resources/sample.txt");
+    File file;
+
+    // get input file
+    System.out.println("Input your file to process.");
+    System.out.printf("File [%s]: ", sample.getName());
+
+    // reading file name
+    String filename = in.nextLine();
+    file = filename.isEmpty() ? sample : new File(filename);
+
+    // the processor object
+    FileAnalytics processor = new FileAnalytics(file);
+
+    int option = 0;
+    do {
+      System.out.println(
+          "Choose your option:\n" +
+              "\t1) Count character occurrences per word\n" +
+              "\t2) exit"
+      );
+      System.out.print("Your option [1-2]: ");
+      option = in.nextInt();
+
+      // validate user selection
+      switch (option) {
+        case 1:
+          break;
+        case 2:
+          break;
+        default:
+          System.out.println("Provide a valid option.");
+      }
+    } while (option != 3);
+
+    System.out.println("Bye.");
   }
 
   /**
@@ -62,9 +92,9 @@ public class FileAnalytics {
    * @param c the char to search by
    * @return the list of results
    */
-  private List<Integer> charOccursPerWord(char c){
-
-  }
+//  private List<Integer> charOccursPerWord(char c){
+//
+//  }
   /**
    * Conta o numero de ocorrencias de C(letra seleccionada) num texto
    *
@@ -177,11 +207,14 @@ public class FileAnalytics {
 
   /**
    * Remove all punctuation from a text.
+   *
    * @param text the text to read from
-   * @return  the converted text
+   * @return the converted text
    */
   private static String removePunctuation(String text) {
-    if (text == null) { return null; }
+    if (text == null) {
+      return null;
+    }
 
     return text.replaceAll("[^a-zA-Z \n]", "");
   }
