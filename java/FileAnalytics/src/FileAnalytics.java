@@ -1,5 +1,7 @@
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 public class FileAnalytics {
@@ -7,6 +9,9 @@ public class FileAnalytics {
   private final String content;
 
   public static void main(String[] args) throws IOException {
+
+    File sample = new File(System.getProperty("user.dir"), "resources/sample.txt");
+    FileAnalytics processor = new FileAnalytics(sample);
 
     // Start off the program
     start();
@@ -48,10 +53,11 @@ public class FileAnalytics {
     do {
       System.out.println(
           "Choose your option:\n" +
-              "\t1) Count character occurrences per word\n" +
-              "\t2) exit"
+              "\t1) count word occurrences\n" +
+              "\t2) count character occurrences per word\n" +
+              "\t3) exit"
       );
-      System.out.print("Your option [1-2]: ");
+      System.out.print("Your option [1-3]: ");
       option = in.nextInt();
 
       // validate user selection
@@ -59,6 +65,21 @@ public class FileAnalytics {
         case 1:
           break;
         case 2:
+          // read char input
+          System.out.print("Character to search by: ");
+          char ch = in.next().charAt(0);
+
+          // count char occurrences
+          Map<Integer, Long> occurs = processor.charOccurrencesPerWord(ch);
+          if (occurs.isEmpty())
+            System.out.printf("There are no occurrences of '%c'.\n", ch);
+          else
+            occurs.forEach((key, value) -> System.out.printf(
+                "There are %d number of occurrences of '%c' in %d words.\n",
+                key, ch, value
+            ));
+          break;
+        case 3:
           break;
         default:
           System.out.println("Provide a valid option.");
@@ -92,9 +113,22 @@ public class FileAnalytics {
    * @param c the char to search by
    * @return the list of results
    */
-//  private List<Integer> charOccursPerWord(char c){
-//
-//  }
+  private Map<Integer, Long> charOccurrencesPerWord(char c){
+    return Arrays
+            .stream(this.content.split("\\s+"))
+            .map(str -> str.chars().mapToObj(
+                ch -> (char) ch
+            ).filter(ch -> ch == c))
+            .map(stream -> stream.toArray().length)
+            .filter(size -> size > 0)
+            .collect(
+                Collectors.groupingBy(
+                    Function.identity(),
+                    Collectors.counting()
+                )
+            );
+  }
+
   /**
    * Conta o numero de ocorrencias de C(letra seleccionada) num texto
    *
