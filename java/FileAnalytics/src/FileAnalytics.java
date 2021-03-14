@@ -2,16 +2,15 @@ import java.io.*;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class FileAnalytics {
 
+  // the file content
   private final String content;
 
   public static void main(String[] args) throws IOException {
-
-    File sample = new File(System.getProperty("user.dir"), "resources/sample.txt");
-    FileAnalytics processor = new FileAnalytics(sample);
 
     // Start off the program
     start();
@@ -49,22 +48,35 @@ public class FileAnalytics {
     // the processor object
     FileAnalytics processor = new FileAnalytics(file);
 
-    int option = 0;
+    int option;
     do {
       System.out.println(
           "Choose your option:\n" +
-              "\t1) count word occurrences\n" +
-              "\t2) count character occurrences per word\n" +
-              "\t3) exit"
+              "\t1) show file content\n" +
+              "\t2) count word occurrences\n" +
+              "\t3) count character occurrences per word\n" +
+              "\t4) additional information\n" +
+              "\t5) exit"
       );
-      System.out.print("Your option [1-3]: ");
+      System.out.print("Your option [1-5]: ");
       option = in.nextInt();
 
       // validate user selection
       switch (option) {
         case 1:
+          // show content
+          System.out.println();
+          System.out.println(processor.content);
           break;
         case 2:
+          // read string input
+          System.out.print("Word to search by: ");
+          String word = in.next();
+
+          System.out.printf("\nThere are %d occurrences of word '%s'.\n\n",
+              processor.wordOccurrences(word), word);
+          break;
+        case 3:
           // read char input
           System.out.print("Character to search by: ");
           char ch = in.next().charAt(0);
@@ -72,19 +84,30 @@ public class FileAnalytics {
           // count char occurrences
           Map<Integer, Long> occurs = processor.charOccurrencesPerWord(ch);
           if (occurs.isEmpty())
-            System.out.printf("There are no occurrences of '%c'.\n", ch);
+            System.out.printf("\nThere are no occurrences of '%c'.\n\n", ch);
           else
             occurs.forEach((key, value) -> System.out.printf(
-                "There are %d number of occurrences of '%c' in %d words.\n",
+                "\nThere are %d number of occurrences of '%c' in %d words.\n\n",
                 key, ch, value
             ));
           break;
-        case 3:
+        case 4:
+          System.out.println();
+          System.out.printf("There are %d words.\n", processor.wordCount());
+          System.out.printf("There are %d vowels.\n", processor.vowelsCount());
+          System.out.printf("There are %d consonants.\n", processor.consonantsCount());
+          System.out.printf("There are %d kinds of punctuation marks: %s\n",
+              processor.getPunctuationMarks().size(), processor.getPunctuationMarks().toString());
+          System.out.printf("There are %d repetitive words: %s\n",
+              processor.getRepetitiveWords().size(), processor.getRepetitiveWords().toString());
+          System.out.println();
+          break;
+        case 5:
           break;
         default:
           System.out.println("Provide a valid option.");
       }
-    } while (option != 3);
+    } while (option != 5);
 
     System.out.println("Bye.");
   }
@@ -109,13 +132,91 @@ public class FileAnalytics {
   }
 
   /**
+   * Counting the number of words
+   * @return the count result
+   */
+  private long wordCount(){
+    String content = removePunctuation(this.content);
+    return Arrays
+        .stream(content.split("\\s+"))
+        .count();
+  }
+
+  /**
+   * Counting the number of occurrences of a word
+   * @param word the string to search by
+   * @return the count result
+   */
+  private long wordOccurrences(String word){
+    String content = removePunctuation(this.content);
+    return Arrays
+        .stream(content.split("\\s+"))
+        .filter(str -> str.equals(word))
+        .count();
+  }
+
+  /**
+   * Counting the number of vowels
+   * @return the count result
+   */
+  private long vowelsCount(){
+    String content = removePunctuation(this.content);
+    return Arrays
+        .stream(content.split("\\s+"))
+        .flatMap(str -> str.chars().mapToObj(
+            ch -> (char) ch
+        )).filter(ch -> "aeiou".indexOf(ch) >= 0)
+        .count();
+  }
+
+  /**
+   * Counting the number of consonants
+   * @return the count result
+   */
+  private long consonantsCount(){
+    String content = removePunctuation(this.content);
+    return Arrays
+        .stream(content.split("\\s+"))
+        .flatMap(str -> str.chars().mapToObj(
+            ch -> (char) ch
+        )).filter(ch -> "aeiou".indexOf(ch) < 0)
+        .count();
+  }
+
+  /**
+   * Get the existing punctuation marks
+   * @return the set of punctuation marks
+   */
+  private Set<Character> getPunctuationMarks(){
+    return Arrays
+        .stream(content.split("\\s+"))
+        .flatMap(str -> str.chars().mapToObj(
+            ch -> (char) ch
+        )).filter(ch -> !Character.isLetterOrDigit(ch))
+        .collect(Collectors.toSet());
+  }
+
+  /**
+   * Get the set of repetitive words
+   * @return the set of repetitive words
+   */
+  private Set<String> getRepetitiveWords(){
+    List<String> words = Arrays.asList(content.split("\\s+"));
+    return words
+        .stream()
+        .filter(word -> Collections.frequency(words, word) > 1)
+        .collect(Collectors.toSet());
+  }
+
+  /**
    * Counting the number of occurrences of a char per word
    * @param c the char to search by
    * @return the list of results
    */
   private Map<Integer, Long> charOccurrencesPerWord(char c){
+    String content = removePunctuation(this.content);
     return Arrays
-            .stream(this.content.split("\\s+"))
+            .stream(content.split("\\s+"))
             .map(str -> str.chars().mapToObj(
                 ch -> (char) ch
             ).filter(ch -> ch == c))
@@ -128,116 +229,6 @@ public class FileAnalytics {
                 )
             );
   }
-
-  /**
-   * Conta o numero de ocorrencias de C(letra seleccionada) num texto
-   *
-   * @param c a letra a procurar
-   */
-//  public int[] quantasOcorrencias(char c) {
-//
-//    int[] quantasOcorrencias = new int[6]; //Vector que conta quantas ocorrencias existem do char c
-//    int i = 0;
-//    int j = 0;
-//    int ocorrencias = 0;
-//    c = Character.toUpperCase(c);
-//
-//    // Ciclo que verifica para cada palavra na posicao vecT[i] o numero de vezes que c ocorre
-//    while (i < vecT.length) {
-//      while (j < vecT[i].length()) {
-//        if (vecT[i].charAt(j) == c)
-//          ocorrencias++;
-//        j++;
-//      }
-//      j = 0;
-//      // No caso de haver alguma palavra com mais de 5 ocorrencias de c,
-//      // incrementa na posição 5
-//      if (ocorrencias >= 5)
-//        quantasOcorrencias[5]++;
-//
-//      else
-//        quantasOcorrencias[ocorrencias]++;
-//      ocorrencias = 0;
-//      i++;
-//    }
-//    return quantasOcorrencias;
-//  }
-
-
-  /**
-   * Conta o numero de palavras iniciadas por C e devolve as mesmas palavras
-   *
-   * @param c        a letra a procurar
-   * @param ficheiro o ficheiro a gravar
-   */
-
-//  public void listaPalavras(char c, String ficheiro) throws IOException {
-//
-//    BufferedWriter writer = new BufferedWriter(new FileWriter(ficheiro));
-//    c = Character.toUpperCase(c);
-//    int posicaoVector = 0;
-//    int repeticoes = 0;
-//    //Verifica quantas palavras comecam por c
-//    for (int i = 0; i < vecT.length; i++) {
-//      if (vecT[i].charAt(0) == c)
-//        repeticoes++;
-//    }
-//
-//    String[] palavras = new String[repeticoes]; //Vector que contém as palavras começadas por c
-//    int[] palavrasIguais = new int[repeticoes]; //Vector que contem as palavras começadas por c iguais
-//    String[] fim = new String[repeticoes]; //String com o tamanho do numero de palavras iniciadas por c
-//    int posicaoFinal = -1;
-//
-//    //Verifica as palavras começadas por c e em caso de encontrar
-//    //Escreve a palavra na String palavras
-//    for (int i = 0; i < vecT.length; i++) {
-//      if (vecT[i].charAt(0) == c) {
-//        palavras[posicaoVector] = vecT[i];
-//        posicaoVector++;
-//      }
-//    }
-//
-//    //Coloca no Vector final as palavras iniciadas por c sem repetições
-//    for (int i = 0; i < palavras.length; i++) {
-//      if (jaExiste(palavras[i], fim)) {
-//        //No caso de a palavra ser repetida, enquanto nao encontra a palavra no vector final
-//        // incrementa. Quando encontra incrementa no vector palavrasIguais o numero de palavras iguais
-//        int j = 0;
-//        while (!fim[j].equals(palavras[i])) {
-//          j++;
-//        }
-//        palavrasIguais[j]++;
-//      }
-//
-//      //No caso de a palavra não ser repetida
-//      else {
-//        posicaoFinal++;
-//        fim[posicaoFinal] = palavras[i];
-//        palavrasIguais[posicaoFinal]++;
-//
-//      }
-//    }
-//    //Escreve as palavras do Vector final no ficheiro
-//    for (int v = 0; v < palavrasIguais.length; v++)
-//      if (fim[v] != null) {
-//        writer.write(fim[v] + " " + palavrasIguais[v]);
-//        writer.newLine();
-//      }
-//    writer.close();
-//  }
-
-
-//  private boolean jaExiste(String palavra, String[] fim) {
-//    boolean jaExiste = false;
-//    int i = 0;
-//    while (!jaExiste && i < fim.length && fim[i] != null) {
-//      if (fim[i].equals(palavra))
-//        jaExiste = true;
-//      i++;
-//    }
-//    return jaExiste;
-//  }
-
 
   /**
    * Remove all punctuation from a text.
