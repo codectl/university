@@ -50,6 +50,7 @@ public class FileAnalytics {
 
     int option;
     do {
+      System.out.println();
       System.out.println(
           "Choose your option:\n" +
               "\t1) show file content\n" +
@@ -66,14 +67,14 @@ public class FileAnalytics {
         case 1:
           // show content
           System.out.println();
-          System.out.println(processor.content);
+          System.out.print(processor.content);
           break;
         case 2:
           // read string input
           System.out.print("Word to search by: ");
           String word = in.next();
 
-          System.out.printf("\nThere are %d occurrences of word '%s'.\n\n",
+          System.out.printf("\nThere are %d occurrences of word '%s'.\n",
               processor.wordOccurrences(word), word);
           break;
         case 3:
@@ -85,11 +86,13 @@ public class FileAnalytics {
           Map<Integer, Long> occurs = processor.charOccurrencesPerWord(ch);
           if (occurs.isEmpty())
             System.out.printf("\nThere are no occurrences of '%c'.\n\n", ch);
-          else
+          else {
+            System.out.println();
             occurs.forEach((key, value) -> System.out.printf(
-                "\nThere are %d number of occurrences of '%c' in %d words.\n\n",
+                "There are %d number of occurrences of '%c' in %d words.\n",
                 key, ch, value
             ));
+          }
           break;
         case 4:
           System.out.println();
@@ -100,16 +103,15 @@ public class FileAnalytics {
               processor.getPunctuationMarks().size(), processor.getPunctuationMarks().toString());
           System.out.printf("There are %d repetitive words: %s\n",
               processor.getRepetitiveWords().size(), processor.getRepetitiveWords().toString());
-          System.out.println();
           break;
         case 5:
+          System.out.println();
+          System.out.println("Bye.");
           break;
         default:
           System.out.println("Provide a valid option.");
       }
     } while (option != 5);
-
-    System.out.println("Bye.");
   }
 
   /**
@@ -133,9 +135,10 @@ public class FileAnalytics {
 
   /**
    * Counting the number of words
+   *
    * @return the count result
    */
-  private long wordCount(){
+  private long wordCount() {
     String content = removePunctuation(this.content);
     return Arrays
         .stream(content.split("\\s+"))
@@ -144,10 +147,11 @@ public class FileAnalytics {
 
   /**
    * Counting the number of occurrences of a word
+   *
    * @param word the string to search by
    * @return the count result
    */
-  private long wordOccurrences(String word){
+  private long wordOccurrences(String word) {
     String content = removePunctuation(this.content);
     return Arrays
         .stream(content.split("\\s+"))
@@ -157,9 +161,10 @@ public class FileAnalytics {
 
   /**
    * Counting the number of vowels
+   *
    * @return the count result
    */
-  private long vowelsCount(){
+  private long vowelsCount() {
     String content = removePunctuation(this.content);
     return Arrays
         .stream(content.split("\\s+"))
@@ -171,9 +176,10 @@ public class FileAnalytics {
 
   /**
    * Counting the number of consonants
+   *
    * @return the count result
    */
-  private long consonantsCount(){
+  private long consonantsCount() {
     String content = removePunctuation(this.content);
     return Arrays
         .stream(content.split("\\s+"))
@@ -185,9 +191,10 @@ public class FileAnalytics {
 
   /**
    * Get the existing punctuation marks
+   *
    * @return the set of punctuation marks
    */
-  private Set<Character> getPunctuationMarks(){
+  private Set<Character> getPunctuationMarks() {
     return Arrays
         .stream(content.split("\\s+"))
         .flatMap(str -> str.chars().mapToObj(
@@ -198,9 +205,10 @@ public class FileAnalytics {
 
   /**
    * Get the set of repetitive words
+   *
    * @return the set of repetitive words
    */
-  private Set<String> getRepetitiveWords(){
+  private Set<String> getRepetitiveWords() {
     List<String> words = Arrays.asList(content.split("\\s+"));
     return words
         .stream()
@@ -210,24 +218,25 @@ public class FileAnalytics {
 
   /**
    * Counting the number of occurrences of a char per word
+   *
    * @param c the char to search by
    * @return the list of results
    */
-  private Map<Integer, Long> charOccurrencesPerWord(char c){
+  private Map<Integer, Long> charOccurrencesPerWord(char c) {
     String content = removePunctuation(this.content);
     return Arrays
-            .stream(content.split("\\s+"))
-            .map(str -> str.chars().mapToObj(
-                ch -> (char) ch
-            ).filter(ch -> ch == c))
-            .map(stream -> stream.toArray().length)
-            .filter(size -> size > 0)
-            .collect(
-                Collectors.groupingBy(
-                    Function.identity(),
-                    Collectors.counting()
-                )
-            );
+        .stream(content.split("\\s+"))
+        .map(str -> str.chars().mapToObj(
+            ch -> (char) ch
+        ).filter(ch -> ch == c))
+        .map(stream -> stream.toArray().length)
+        .filter(size -> size > 0)
+        .collect(
+            Collectors.groupingBy(
+                Function.identity(),
+                Collectors.counting()
+            )
+        );
   }
 
   /**
