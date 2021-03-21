@@ -135,7 +135,7 @@ public class PNCalculator {
   /**
    * Validate an arithmetic expression.
    * Algorithm: split expression by operators and check if each
-   * element is a number.
+   * operand is valid and follows infix notation.
    *
    * @param expression the expression to validate.
    * @return true if expression is correct, false otherwise.
@@ -165,16 +165,16 @@ public class PNCalculator {
           })
           .reduce(true, (elem1, elem2) -> elem1 & elem2);
     } else {
+      // Bracket expressions must obey to single expression rules
+      // and so it should its content
       return
-
-          // Bracket expressions must obey to single expression rules
-          // and it is its content
           validateInfixExpression(
               expressions
                   .stream()
                   .reduce(expression, (elem1, elem2) -> expression
                       .replace('(' + elem1 + ')', "0")
-                      .replace('(' + elem2 + ')', "0")))
+                      .replace('(' + elem2 + ')', "0"))
+          )
               &&
               expressions
                   .stream()
