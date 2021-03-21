@@ -7,15 +7,9 @@ import java.util.stream.Collectors;
  */
 public class PNCalculator {
 
-  private final Stack<Object> stack;
-
   // Supported operators
   private final static Set<Character> operators =
       new HashSet<>(Arrays.asList('+', '-', '*', '/', '%'));
-
-  public PNCalculator() {
-    this.stack = new Stack<>();
-  }
 
   /*
    *
@@ -114,8 +108,60 @@ public class PNCalculator {
    * @param c the character to check
    * @return true if is an operator, false otherwise
    */
-  public static boolean isOperator(char c) {
+  private static boolean isOperator(char c) {
     return operators.contains(c);
+  }
+
+  /**
+   * Convert an infix expression into a suffix.
+   * @param expression the expression to convert
+   * @return the suffix expression
+   */
+  public static String infixToSuffix(String expression) {
+    if (!validateInfixExpression(expression))
+      throw new IllegalArgumentException("Invalid expression");
+
+    StringBuilder postfix = new StringBuilder();
+    Stack<Character> operators = new Stack<>();
+
+    for (char token : expression.toCharArray()) {
+      // Stack the open bracket
+      if (token == '(') {
+        operators.push(token);
+      }
+      // Unstack operators until closing bracket is found
+      else if (token == ')') {
+        Character top;
+        do {
+          top = operators.pop();
+          postfix.append(top);
+        } while (top != '(');
+      }
+      // Unstack all operators that have prevalence over
+      // operator under evaluation and stack it at last
+      else if (isOperator(token)) {
+        while (!operators.isEmpty()
+            && isOperator(operators.peek())
+            && hasPrecedence(operators.peek(), token)
+        )
+          postfix.append(operators.pop());
+        operators.push(token);
+      }
+      // Append operand to result
+      else {
+        postfix.append(token);
+      }
+    }
+
+    // Push remaining stack to the end result
+    while (!operators.isEmpty())
+      postfix.append(operators.pop());
+
+    // Adding blank spaces in between characters for better visuals
+    return postfix.toString().chars()
+        .mapToObj(c -> (char) c + " ")
+        .collect(Collectors.joining())
+        .trim();
   }
 
   /**
@@ -141,7 +187,12 @@ public class PNCalculator {
    * @return true if expression is correct, false otherwise.
    */
   public static boolean validateInfixExpression(String expression) {
-    List<String> expressions = getBracketExpressions(expression);
+    List<String> expressions;
+    try {
+      expressions = getBracketExpressions(expression);
+    } catch (IllegalArgumentException e) {
+      return false;
+    }
 
     // Process single expression
     if (expressions.isEmpty()) {
@@ -149,7 +200,6 @@ public class PNCalculator {
           .map(op -> '\\' + op.toString())
           .collect(Collectors.joining());
       String[] operands = expression
-          .replace(" ", "")
           .split("[" + regex + "]");
 
       // In between an operator must always be an operand

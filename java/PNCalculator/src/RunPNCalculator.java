@@ -23,7 +23,7 @@ public class RunPNCalculator {
             "A calculator that uses polish notation for calculations.\n"
     );
 
-    System.out.println(PNCalculator.validateInfixExpression("1+(2-2)"));
+    System.out.println(PNCalculator.infixToSuffix("1*2+(2-2*(4+3))"));
 
 
     int option;
