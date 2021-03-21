@@ -140,21 +140,80 @@ public class PNCalculator {
    * @param expression the expression to validate.
    * @return true if expression is correct, false otherwise.
    */
-  public static boolean validateExpression(String expression) {
-    return Arrays
-        .stream(
-            expression
-                .replace(" ", "")
-                .split("[" + operators.toString() + "]")
-        )
-        .map(token -> {
-          try {
-            Double.parseDouble(token);
-            return true;
-          } catch (NumberFormatException e) {
-            return false;
-          }
-        })
-        .reduce(true, (res, element) -> element & res);
+  public static boolean validateInfixExpression(String expression) {
+    List<String> expressions = getBracketExpressions(expression);
+
+    // Process single expression
+    if (expressions.isEmpty()) {
+      String regex = operators.stream()
+          .map(op -> '\\' + op.toString())
+          .collect(Collectors.joining());
+      String[] operands = expression
+          .replace(" ", "")
+          .split("[" + regex + "]");
+
+      // In between an operator must always be an operand
+      return operands.length > 1 && Arrays
+          .stream(operands)
+          .map(token -> {
+            try {
+              Double.parseDouble(token);
+              return true;
+            } catch (NumberFormatException e) {
+              return false;
+            }
+          })
+          .reduce(true, (elem1, elem2) -> elem1 & elem2);
+    } else {
+      return
+
+          // Bracket expressions must obey to single expression rules
+          // and it is its content
+          validateInfixExpression(
+              expressions
+                  .stream()
+                  .reduce(expression, (elem1, elem2) -> expression
+                      .replace('(' + elem1 + ')', "0")
+                      .replace('(' + elem2 + ')', "0")))
+              &&
+              expressions
+                  .stream()
+                  .map(PNCalculator::validateInfixExpression)
+                  .reduce(true, (elem1, elem2) -> elem1 & elem2);
+    }
+  }
+
+  /**
+   * Get round bracket expressions within an expression.
+   *
+   * @param expression the expression to check
+   * @return list of bracket expressions
+   */
+  private static List<String> getBracketExpressions(String expression) {
+    List<String> results = new ArrayList<>();
+
+    int control = 0;
+    StringBuilder partial = new StringBuilder();
+    for (char c : expression.toCharArray()) {
+      switch (c) {
+        case '(':
+          if (control++ == 0) partial.setLength(0);
+          else partial.append(c);
+          break;
+        case ')':
+          if (--control == 0) results.add(partial.toString());
+          else partial.append(c);
+          break;
+        default:
+          if (control > 0) partial.append(c);
+          break;
+      }
+    }
+
+    // Check if parenthesis are unbalanced
+    if (control != 0)
+      throw new IllegalArgumentException("Unbalanced expression");
+
+    return results;
   }
 }

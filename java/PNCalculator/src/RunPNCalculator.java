@@ -23,7 +23,7 @@ public class RunPNCalculator {
             "A calculator that uses polish notation for calculations.\n"
     );
 
-    System.out.println(PNCalculator.validateExpression("111++1"));
+    System.out.println(PNCalculator.validateInfixExpression("1+(2-2)"));
 
 
     int option;
@@ -35,7 +35,7 @@ public class RunPNCalculator {
               "\t2) use calculator\n" +
               "\t3) exit"
       );
-      System.out.print("Your option [1-5]: ");
+      System.out.print("Your option [1-3]: ");
       option = in.nextInt();
 
       // validate user selection
@@ -45,7 +45,7 @@ public class RunPNCalculator {
           System.out.print("Expression: ");
           String expression = in.next();
 
-          System.out.println(PNCalculator.validateExpression(expression));
+          System.out.println(PNCalculator.validateInfixExpression(expression));
           break;
         case 2:
           break;
