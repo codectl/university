@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 /**
@@ -34,54 +35,63 @@ public class PolishCalculator {
 
   /**
    * Convert an infix expression into a suffix.
+   *
    * @return the suffix expression
    */
   public String infixToSuffix() {
     StringBuilder postfix = new StringBuilder();
-    Stack<Character> operators = new Stack<>();
+    Stack<Character> operatorsStack = new Stack<>();
 
-    for (char token : expression.toCharArray()) {
+    // Create regex with operators and parenthesis
+    // by escaping each operator
+    String regex = Stream.concat(operators.stream(), Stream.of('(', ')'))
+        .map(op -> '\\' + op.toString())
+        .collect(Collectors.joining());
+
+    // Regex for splitting operands and keeping
+    // the delimeters
+    regex = "((?<=[" + regex + "])|(?=[" + regex + "]))";
+
+    for (String token : expression.split(regex)) {
       // Stack the open bracket
-      if (token == '(') {
-        operators.push(token);
+      if (token.equals("(")) {
+        operatorsStack.push(token.charAt(0));
       }
       // Unstack operators until closing bracket is found
-      else if (token == ')') {
-        Character top;
-        do {
-          top = operators.pop();
-          postfix.append(top);
-        } while (top != '(');
+      else if (token.equals(")")) {
+        Character top = operatorsStack.pop();
+        while (top != '(') {
+          postfix.append(top).append(' ');
+          top = operatorsStack.pop();
+        }
       }
       // Unstack all operators that have prevalence over
       // operator under evaluation and stack it at last
-      else if (isOperator(token)) {
-        while (!operators.isEmpty()
-            && isOperator(operators.peek())
-            && hasPrecedence(operators.peek(), token)
+      else if (isOperator(token.charAt(0))) {
+        while (!operatorsStack.isEmpty()
+            && isOperator(operatorsStack.peek())
+            && hasPrecedence(operatorsStack.peek(), token.charAt(0))
         )
-          postfix.append(operators.pop());
-        operators.push(token);
+          postfix.append(operatorsStack.pop()).append(' ');
+        operatorsStack.push(token.charAt(0));
       }
       // Append operand to result
       else {
-        postfix.append(token);
+        postfix.append(token).append(' ');
       }
     }
 
     // Push remaining stack to the end result
-    while (!operators.isEmpty())
-      postfix.append(operators.pop());
+    while (!operatorsStack.isEmpty()) {
+      postfix.append(operatorsStack.pop()).append(' ');
+    }
 
-    // Adding blank spaces in between characters for better visuals
-    return postfix.toString().chars()
-        .mapToObj(c -> (char) c + " ")
-        .collect(Collectors.joining())
-        .trim();
+    return postfix.toString().trim();
   }
 
   /**
    * Convert an infix expression into a prefix.
+   *
    * @return the prefix expression
    */
   public String infixToPrefix() {
@@ -97,34 +107,39 @@ public class PolishCalculator {
    *               push result back to the stack.
    *            4) repeat steps 1 - 3 over all the expression
    *               and the final result is the top of the stack
+   *
    * @return the result
    */
   public double solve() {
     String suffix = infixToSuffix();
     Stack<Double> stack = new Stack<>();
-    for (String element : suffix.split(" ")){
-      if (isOperator(element.charAt(0))) {
-        switch (element){
-          case "+":
-            stack.push(stack.pop() + stack.pop());
+    for (String element : suffix.split(" ")) {
+      char c = element.charAt(0);
+      if (isOperator(c)) {
+        double right = stack.pop();
+        double left = stack.pop();
+        switch (c) {
+          case '+':
+            stack.push(left + right);
             break;
-          case "-":
-            stack.push(stack.pop() - stack.pop());
+          case '-':
+            stack.push(left - right);
             break;
-          case "*":
-            stack.push(stack.pop() * stack.pop());
+          case '*':
+            stack.push(left * right);
             break;
-          case "/":
-            stack.push(stack.pop() / stack.pop());
+          case '/':
+            stack.push(left / right);
             break;
-          case "%":
-            stack.push(stack.pop() % stack.pop());
+          case '%':
+            stack.push(left % right);
             break;
         }
-      }  else
-          stack.push(Double.valueOf(element));
+      } else
+        stack.push(Double.valueOf(element));
     }
-    return stack.pop();
+    // Round to one decimal place
+    return Math.round(stack.pop() * 10) / 10.0;
   }
 
   /**
