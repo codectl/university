@@ -17,7 +17,7 @@ public class RunPolishCalculator {
 
     // start the user interaction with initial instructions
     System.out.println(
-        "\n*** Welcome to the PNCalculator ***\n" +
+        "\n*** Welcome to the PolishCalculator ***\n" +
             "A calculator that uses polish notation for algebraic expressions."
     );
     System.out.println();
@@ -66,7 +66,7 @@ public class RunPolishCalculator {
             break;
           case 2:
             // convert to prefix notation
-            System.out.println("Prefix " + calculator.infixToPrefix());
+            System.out.println("Prefix: " + calculator.infixToPrefix());
             break;
           case 3:
             // solve expression
