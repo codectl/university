@@ -17,7 +17,7 @@ The program requires ```Java 8``` version or latter.
 
 ## Execution example:
 
-    *** Welcome to the PNCalculator ***
+    *** Welcome to the PolishCalculator ***
     A calculator that uses polish notation for algebraic expressions.
     
     Valid operators are: + - * / %.
