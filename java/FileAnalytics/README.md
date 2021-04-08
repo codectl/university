@@ -30,12 +30,7 @@ The program requires ```Java 8``` version or latter.
 ## Execution example:
 
     *** Welcome to the FileAnalytics ***
-    A tool that given a file, provides you with a
-    serious of statistics of your choice.
-    
-    Start off by providing the file path you wish to process.
-    If none is specified, a sample text is provided for you.
-    
+
     Input your file to process.
     File [sample.txt]:
 

@@ -39,11 +39,11 @@ public class RunFileAnalytics {
       System.out.println();
       System.out.println(
           "Choose your option:\n" +
-              "\t1) show instructions\n" +
-              "\t2) show file content\n" +
-              "\t3) count word occurrences\n" +
-              "\t4) count character occurrences per word\n" +
-              "\t5) additional information\n" +
+              "\t1) show file content\n" +
+              "\t2) count word occurrences\n" +
+              "\t3) count character occurrences per word\n" +
+              "\t4) additional information\n" +
+              "\t5) display instructions\n" +
               "\t6) exit"
       );
       System.out.print("Your option [1-6]: ");
@@ -52,24 +52,11 @@ public class RunFileAnalytics {
       // validate user selection
       switch (option) {
         case 1:
-          System.out.println(
-              "\nFileAnalytics is a program that provides insights over a given file.\n" +
-                  "\n" +
-                  "A valid path file is required so using absolute path is recommended.\n" +
-                  "A possible value could be ~/documents/my_file.txt.\n" +
-                  "If none is specified, a sample text is provided for you.\n" +
-                  "\n" +
-                  "Afterwards an options menu is displayed.\n" +
-                  "Input the right option for the desired action.\n" +
-                  "For instance, to display these instruction, input option 1.\n" +
-                  "To exit program, input option 6.");
-          break;
-        case 2:
           // show content
           System.out.println();
           System.out.print(processor.content);
           break;
-        case 3:
+        case 2:
           // read string input
           System.out.print("Word to search by: ");
           String word = in.next();
@@ -77,7 +64,7 @@ public class RunFileAnalytics {
           System.out.printf("\nThere are %d occurrences of word '%s'.\n",
               processor.wordOccurrences(word), word);
           break;
-        case 4:
+        case 3:
           // read char input
           System.out.print("Character to search by: ");
           char ch = in.next().charAt(0);
@@ -94,7 +81,7 @@ public class RunFileAnalytics {
             ));
           }
           break;
-        case 5:
+        case 4:
           System.out.println();
           System.out.printf("There are %d words.\n", processor.wordCount());
           System.out.printf("There are %d vowels.\n", processor.vowelsCount());
@@ -103,6 +90,19 @@ public class RunFileAnalytics {
               processor.getPunctuationMarks().size(), processor.getPunctuationMarks().toString());
           System.out.printf("There are %d repetitive words: %s\n",
               processor.getRepetitiveWords().size(), processor.getRepetitiveWords().toString());
+          break;
+        case 5:
+          System.out.println(
+              "\nFileAnalytics is a program that provides insights over a given file.\n" +
+                  "\n" +
+                  "A valid path file is required so using absolute path is recommended.\n" +
+                  "A possible value could be ~/documents/my_file.txt.\n" +
+                  "If none is specified, a sample text is provided for you.\n" +
+                  "\n" +
+                  "Afterwards an options menu is displayed.\n" +
+                  "Input the right option for the desired action.\n" +
+                  "For instance, to display these instruction, input option 5.\n" +
+                  "To exit program, input option 6.");
           break;
         case 6:
           System.out.println();
