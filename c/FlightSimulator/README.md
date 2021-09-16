@@ -33,6 +33,7 @@ $ pkg-config --libs allegro-5 allegro_main-5
 After the program is compiled following the corresponding [instructions](#Compile), the program is now ready to run:
 
 ```bash
+
 ./main
 ```
 
