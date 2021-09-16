@@ -55,23 +55,6 @@ struct generation_rate{
 	int b;
 };
 
-
-struct airplane{
-	int airplane_id;
-	int alt;
-	int spd;
-	int orientation;
-	int ref_alt;
-	int ref_spd;
-	int ref_orientation;
-	float position_x;
-	float position_y;
-	struct runway *origin_track;
-	struct gate *origin_gate;
-	struct runway *destiny_track;
-	struct gate *destiny_gate;
-};
-
 struct sort_airplanes{	
 	int id;
 	int id_destiny;

@@ -1,9 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "structs.h"
-#include "airplanes.h"
-
 struct airplane *create_airplane(
     int id,
     int altitude,
@@ -19,8 +16,8 @@ struct airplane *create_airplane(
 	struct runway *destiny_track,
 	struct gate *destiny_gate
 ) {
-	struct airplane *airplane = (struct airplane *) malloc (sizeof (struct airplane));
-	if (airplane == NULL || sizeof(*airplane) != sizeof(struct airplane)){		
+	AIRPLANE *airplane = (AIRPLANE *) malloc (sizeof (AIRPLANE));
+	if (airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)){
 		printf("Error creating airplane ...\n");
 		return NULL;
 	}
@@ -41,8 +38,8 @@ struct airplane *create_airplane(
 	return airplane;
 }
 
-int destroy_airplane(struct airplane *airplane){
-	if(airplane == NULL || sizeof(*airplane) != sizeof(struct airplane)){
+int destroy_airplane(AIRPLANE *airplane){
+	if(airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)){
 		printf("Invalid input ...\n");
 		return -1;
 	}
@@ -50,7 +47,7 @@ int destroy_airplane(struct airplane *airplane){
 	return 0;
 }
 
-void airplane_toString(struct airplane *airplane){
+void airplane_toString(AIRPLANE *airplane){
 	printf("******************************\n");
 	printf("ID: %d\n", airplane->id);
 	printf("POSITION X: %f\n", airplane->position_x);

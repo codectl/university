@@ -1,30 +1,62 @@
-#ifndef _AIRPLANE_LIST_H
-#define _AIRPLANE_LIST_H
+#ifndef _AIRPLANES_H
+#define _AIRPLANES_H
 
-#include "structs.h"
+#include "airplane.h"
 
 struct node {
-	struct airplane *ap;	// node element (airplane)
+    AIRPLANE *airplane;	    // node element (airplane)
     struct node *next;	    // next element
-	struct node *prev;	    // previous element
+    struct node *prev;	    // previous element
 };
 
-struct airplanes {
-	struct node *head;	    // list header
-	struct node *tail;	    // list tail
-};
+typedef struct airplane_list {
+    struct node *head;	    // list header
+    struct node *tail;	    // list tail
+} AIRPLANES;
 
 /* Create node */
 struct node *node_create(struct airplane *ap);
-
-struct airplane_list *list_create();
-int list_destroy(struct airplane_list *list);
 int node_destroy(struct node *node);
-int list_add(struct airplane_list *list, struct airplane *airplane);
-int list_remove(struct airplane_list *list, int search_key);
-int list_size(struct airplane_list *list);
-struct airplane *find_airplane(struct airplane_list *list, int search_key);
-int exists_airplane(struct airplane_list *list, int search_key);
-void list_toString(struct airplane_list *list);
+
+/*
+ * Create an empty list of airplanes.
+ */
+AIRPLANES *init_airplanes();
+
+/*
+ * Remove an airplane given its id.
+ */
+void remove_airplane(AIRPLANES *airplanes, int id);
+
+/*
+ * Remove all airplanes.
+ */
+void remove_airplanes(AIRPLANES *airplanes);
+
+/*
+ * Add a new airplane.
+ */
+void add_airplane(AIRPLANES *airplanes, AIRPLANE *airplane);
+
+/*
+ * Get number of airplanes.
+ */
+int airplanes_size(AIRPLANES *airplanes);
+
+/*
+ * Find airplane given its id.
+ * Return NULL if not found.
+ */
+AIRPLANE *find_airplane(AIRPLANES *airplanes, int id);
+
+/*
+ * Check whether airplane exists given its id.
+ */
+int exists_airplane(AIRPLANES *airplanes, int id);
+
+/*
+ * Textual representation for airplanes.
+ */
+void airplanes_toString(AIRPLANES *airplanes);
 
 #endif
