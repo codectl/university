@@ -40,10 +40,10 @@ void add_airplane(AIRPLANES *airplanes, AIRPLANE *airplane);
 int airplanes_size(AIRPLANES *airplanes);
 
 /*
- * Find airplane given its id.
+ * Get airplane given its id.
  * Return NULL if not found.
  */
-AIRPLANE *find_airplane(AIRPLANES *airplanes, int id);
+AIRPLANE *get_airplane(AIRPLANES *airplanes, int id);
 
 /*
  * Check whether airplane exists given its id.

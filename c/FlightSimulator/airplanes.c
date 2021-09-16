@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "airplane.h"
 #include "airplanes.h"
 
 struct node *create_node(AIRPLANE *airplane) {
@@ -10,7 +11,7 @@ struct node *create_node(AIRPLANE *airplane) {
 	}
 	struct node *node;
 	node = (struct node *) malloc(sizeof(struct node));
-	if(node == NULL){
+	if(node == NULL) {
 		printf("Error creating node ...\n");
 		exit(1);
 	}
@@ -21,7 +22,7 @@ struct node *create_node(AIRPLANE *airplane) {
 }
 
 void destroy_node(struct node *node) {
-	if(node == NULL || sizeof(*node) != sizeof(struct node)){
+	if(node == NULL || sizeof(*node) != sizeof(struct node)) {
 		printf("Input error ...\n");
 		exit(1);
 	}
@@ -66,130 +67,122 @@ void add_airplane(AIRPLANES *airplanes, AIRPLANE *airplane) {
 }
 
 void remove_airplane(AIRPLANES *airplanes, int id) {
-	struct node *node, *aux;
 	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
 		printf("Invalid input ...\n");
 		exit(1);
 	}
 
-    airplane = find_airplane(airplanes, id);
-	if (!exists_airplane(airplanes, id)) {
-		printf("The airplane to be removed does not exist.\n");
-		return;
-	}
-
-    node = list->head;
-    while(node->airplane->id != id)
+    struct node *node = airplanes->head;
+    while(node != NULL && node->airplane->id != id)
         node = node->next;
 
-    // keep reference
-	aux = ptr;
+    if (node == NULL) {
+		printf("The airplane to be removed does not exist.\n");
+        return;
+    }
 
     // first element removal
-	if(node->prev == NULL){
-		if(airplanes_size(list) == 1){
-			list->head = NULL;
-			list->tail = NULL;
+	if(node->prev == NULL) {
+		if(airplanes_size(airplanes) == 1) {
+			airplanes->head = NULL;
+			airplanes->tail = NULL;
 		}
 		else{
-			list->head->next->prev = NULL;
-			list->head = list->head->next;
+			airplanes->head = airplanes->head->next;
+			airplanes->head->prev = NULL;
 		}
 	}
 
 	// last element removal
-	else if(ptr->next == NULL){
-		list->tail = ptr->prev;
-		ptr->prev->next = NULL;
+	else if(node->next == NULL) {
+		airplanes->tail = node->prev;
+		airplanes->tail->next = NULL;
 	}
 
 	// middle list removal
 	else {
-		ptr->prev->next = ptr->next;
-		ptr->next->prev = ptr->prev;
+		node->prev->next = node->next;
+		node->next->prev = node->prev;
 	}
 
-	if (node_destroy(aux) == -1) return -1;	
-	printf("Airplane %d removed successfully\n", search_key);
+	destroy_node(node);
 
-	return 0;
+	printf("Airplane %d removed.\n", id);
 }
 
-
-
-/*
- * Totally erase all the airplanes structs from the airplane list
- * Return -1 if error, 0 if succedded
- */
-int list_destroy(struct airplane_list *list){
-	struct node *aux;
-	if(list == NULL || sizeof(*list) != sizeof(struct airplane_list)) return -1;
-	aux = NULL;
-	while((list->head)!= NULL){
-		aux = list->head->next;
-		if(node_destroy(list->head) == -1) /* destroy completely each node from the list */
-			return -1;
-		list->head = aux;
+void remove_airplanes(AIRPLANES *airplanes) {
+	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
+		printf("Invalid input ...\n");
+		exit(1);
 	}
-	list->tail = NULL;
-	free(list);
-	return 0;
+
+    struct node *node;
+	while(airplanes->head != NULL) {
+	    node = airplanes->head;
+		airplanes->head = airplanes->head->next;
+		destroy_node(node);
+	}
 }
 
+int airplanes_size(AIRPLANES *airplanes) {
+	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
+		printf("Invalid input ...\n");
+		exit(1);
+	}
 
-
-/* 
- * Returns the number of airplane structs in the list. -1 if error.
- */
-int list_size(struct airplane_list *list){
-	struct node *node;
-	int count;
-	if(list == NULL || sizeof(*list) != sizeof(struct airplane_list)) return -1;
-	node = list->head;
-	count = 0;
-	while(node!=NULL){
+    struct node* node = airplanes->head;
+	int count = 0;
+	while(node != NULL) {
 		count++;
 		node = node->next;
 	}
 	return count;
 }
 
-/*
- * Given its identifier number, finds a specific airplane from a list of airplanes
- * Returns NULL if the airplane does not exist
- */
-struct airplane *find_airplane(struct airplane_list *list, int search_key){
-	struct node *ptr = list->head;
-	while(ptr != NULL){
-		if(ptr->ap->airplane_id == search_key) break;
-		ptr = ptr->next;
+AIRPLANE *get_airplane(AIRPLANES *airplanes, int search_key) {
+	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
+		printf("Invalid input ...\n");
+		exit(1);
 	}
-	if (ptr == NULL){ /* in case the requested airplane does not exist */
-		printf("A aeronave que procura nao existe\n");
-		return NULL;
-	}
-	return ptr->ap;
+
+	struct node *node = airplanes->head;
+	while(node != NULL && node->airplane->id != id)
+		node = node->next;
+
+    if (node == NULL) {
+        printf("The airplane to be removed does not exist.\n");
+        return NULL;
+    }
+
+	return node->airplane;
 }
 
 int exists_airplane(AIRPLANES *airplanes, int id){
-	struct node *node = list->head;
+	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
+		printf("Invalid input ...\n");
+		exit(1);
+	}
+
+	struct node *node = airplanes->head;
 	while(node != NULL && node->airplane->id != id)
 		node = node->next;
 	return node == NULL ? 0 : 1;
 }
 
-/*
- * Gives a textual representation of the airplane list
- */
-void list_toString(struct airplane_list *list){
-	struct node *node = list->head;
-	if(node == NULL) /* in case the list is empty */
-		printf("Nao se verifica a existencia de qualquer aeronave\n");
-	else{	
-		while(node!=NULL){
-			airplane_toString(node->ap);
-			node = node->next;
-		}
+void airplanes_toString(AIRPLANES *airplanes){
+	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
+		printf("Invalid input ...\n");
+		exit(1);
 	}
+
+	struct node *node = airplanes->head;
+	if(node == NULL) {
+		printf("No airplanes\n");
+		return;
+	}
+    while(node != NULL) {
+        airplane_toString(node->airplane);
+        node = node->next;
+    }
 }
 
