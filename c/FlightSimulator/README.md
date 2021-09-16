@@ -2,7 +2,7 @@
 
 A simulator for an airport control tower.
 
-## Run
+## Compile
 
 Make sure to install the required project [dependencies](#Dependencies) first. Now, one will have to define the
 variable ```PKG_CONFIG_PATH``` that specifies additional paths in which ```pkg-config``` will search for its libs, in
@@ -17,7 +17,7 @@ $ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
 Now, the program needs to be compiled, in this case using ```gcc```:
 
 ```bash
-$ gcc main.c -o test `pkg-config --libs allegro-5 allegro_main-5`
+$ gcc main.c -o main `pkg-config --libs allegro-5 allegro_main-5`
 ```
 
 Note that the command ```pkg-config --libs allegro-5 allegro_main-5``` is executed, which passes the result to ```gcc```
@@ -26,6 +26,14 @@ Note that the command ```pkg-config --libs allegro-5 allegro_main-5``` is execut
 ```bash
 $ pkg-config --libs allegro-5 allegro_main-5
 -L/usr/local/lib -lallegro_main -lallegro
+```
+
+## Run
+
+After the program is compiled following the corresponding [instructions](#Compile), the program is now ready to run:
+
+```bash
+./main
 ```
 
 ## Dependencies
