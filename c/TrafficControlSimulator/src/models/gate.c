@@ -5,16 +5,28 @@
 
 #define MAX_DIMENSION 100
 
-/*
- * Creates new gate
- * Returns NULL, in case of error
- */
-struct gate *new_gate(char type, int number, float position_x, float position_y,
-		      int size, int width, int orientation, int color,
-		      int alt, int spd, int n_points, float *points, int gen_1, int gen_2, char gen_type){
-	
-	struct gate *gate = (struct gate *) malloc (sizeof (struct gate));
-	int i;
+GATE *create_gate(
+    char type,
+    int number,
+    float position_x,
+    float position_y,
+    int size,
+    int width,
+    int orientation,
+    int color,
+    int alt,
+    int spd,
+    int n_points,
+    float *points,
+    int gen_1,
+    int gen_2,
+    char gen_type
+){
+	GATE *gate = (GATE *) malloc (sizeof(GATE));
+    if (gate == NULL || sizeof(*gate) != sizeof(GATE)) {
+        printf("Error creating gate ...\n");
+        exit(1);
+    }
 
 	gate->type = type;
 	gate->number = number;
@@ -29,81 +41,71 @@ struct gate *new_gate(char type, int number, float position_x, float position_y,
 	gate->n_points = n_points;
 	if(n_points == 0)
 		points = NULL;
-	else{
+	else {
+	    int i;
 		gate->points = (float *) malloc(sizeof (float) * n_points * 2);
-		for(i=0; i < n_points * 2; i++)
+		for(i = 0; i < n_points * 2; i++)
 			gate->points[i] = points[i];
 	}
 	gate->gen_1 = gen_1;
 	gate->gen_2 = gen_2;
 	gate->gen_type = gen_type;
+
+    printf("Gate '%d' created.\n", id);
 	return gate;
 }
 
-/*
- * Erases all the memory allocated to a gate struct
- * Return -1 if error, 0 if succeded
- */
-int gate_destroy(struct gate *gate){
-	if(gate == NULL || sizeof(*gate) != sizeof(struct gate)) return -1;
-	free(gate->points);
-	free(gate);
-	return 0;
+GATE *get_gate(AIRPORT *airport, int id, char type){
+	int i;
+	for(i=0; i < airport->n_gates; i++)
+		if(airport->gates[i]->number == id && airport->gates[i]->type == type)
+			return airport->gates[i];
+	return NULL;
 }
 
+void destroy_gate(GATE *gate){
+	if(gate == NULL || sizeof(*gate) != sizeof(GATE)) {
+		printf("Invalid input ...\n");
+		exit(1);
+	}
 
-/*
- * Count the number of represented gates in a file
- */
-int gate_count(char *file_name){
+    int id = gate->id;
+	free(gate->points);
+	free(gate);
+    printf("Gate '%d' destroyed.\n", id);
+}
+
+int count_gates(char *filename){
 	FILE *file;
 	char next_line[MAX_DIMENSION], *tok;
 	int count = 0;
 
 	if ((file = fopen(file_name, "r")) == NULL){
-		printf("Erro na abertura do ficheiro.\n");
-		return -1;
+		printf("Error opening file ...\n");
+        exit(1);
 	}
 
 	fgets(next_line, MAX_DIMENSION, file);
-	tok = strtok(next_line, " ");
+	token = strtok(next_line, " ");
 	while (!feof(file)) {
 		fgets(next_line, MAX_DIMENSION, file);
-		tok = strtok(next_line, " ");
-		if(!strcmp(tok, "GATE"))
+		token = strtok(next_line, " ");
+		if(!strcmp(token, "GATE"))
 			count++;
 	}
 	fclose(file);
+
 	return count;
 }
 
-/*
- * Checks whether a gate already exists
- * Return 1 if true, false otherwise
- */
-int exists_gate(int n_gates, int id_gate, char type_gate, struct airport *airport){
+int exists_gate(AIRPORT *airport, int n, int id, char type){
 	int i;
 	for(i=0; i<n_gates;i++)
-		if(airport->gates[i]->number == id_gate && airport->gates[i]->type == type_gate)
+		if(airport->gates[i]->number == id && airport->gates[i]->type == type)
 			return 1;
 	return 0;
 }
 
-/*
- * Finds a specific gate within a certain number of gates
- * Return NULL if didn't find it
- */
-struct gate *find_gate(int id_gate, char type_gate, struct airport *airport){
-	int i;
-	for(i=0; i<airport->n_gates; i++)
-		if(airport->gates[i]->number == id_gate && airport->gates[i]->type == type_gate)
-			return airport->gates[i];
-	return NULL;
-}
-
-/*
- * Gives a textual representation of a gate struct
- */
 void gate_toString(struct gate *gate){
 	int i, j;
 	printf("\n");
@@ -117,6 +119,3 @@ void gate_toString(struct gate *gate){
 	if(gate->type == 'A')
 		printf("Generation type and its parameters: %c %d %d\n", gate->gen_type, gate->gen_1, gate->gen_2);
 }
-
-
-

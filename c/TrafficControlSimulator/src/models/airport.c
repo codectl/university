@@ -129,7 +129,8 @@ AIRPORT *create_airport(char *filename){
 		}
 	}
 	fclose(file);
-	
+
+	printf("Airport '%d' created.\n", id);
 	return airport;
 }
 

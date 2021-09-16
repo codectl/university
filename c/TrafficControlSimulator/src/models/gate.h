@@ -44,6 +44,12 @@ GATE *create_gate(
 );
 
 /*
+ * Get a gate from an airport given its id and type.
+ * Return NULL if not found.
+ */
+GATE *get_gate(AIRPORT *airport, int id, char type);
+
+/*
  * Destroy a gate.
  */
 int destroy_gate(GATE *gate);
@@ -54,16 +60,10 @@ int destroy_gate(GATE *gate);
 int count_gates(char *filename);
 
 /*
- * Checks whether a gate exists.
+ * Checks whether a gate exists in an airport given its id and type.
  * Return 1 if true, 0 otherwise.
  */
-int exists_gate(int n_gates, int id_gate, char type_gate, AIRPORT *airport);
-
-/*
- * Get a gate from an airport given its id and type.
- * Return NULL if not found.
- */
-GATE *get_gate(AIRPORT *airport, int id, char type);
+int exists_gate(AIRPORT *airport, int n, int id, char type);
 
 /*
  * Textual representation of a gate.

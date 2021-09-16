@@ -84,8 +84,8 @@ int count_runways(char *filename) {
 		if(!strcmp(token, "RUNWAY"))
 			count++;
 	}
-
 	fclose(file);
+
 	return count;
 }
 

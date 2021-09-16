@@ -58,7 +58,7 @@ void destroy_runway(RUNWAY *runway);
 int count_runways(char *filename);
 
 /*
- * Checks whether a runway exists.
+ * Checks whether a runway exists in an airport given its id.
  * Return 1 if true, 0 otherwise.
  */
 int exists_runway(AIRPORT *airport, int n, int id);
