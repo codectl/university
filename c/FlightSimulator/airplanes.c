@@ -1,115 +1,93 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "structs.h"
+
 #include "airplanes.h"
-#include "airplane_list.h"
 
-
-/*
- * Creates a new node that will figure in a airplane_list struct
- * Returns NULL, in case of error
- */
-struct node *node_create(struct airplane *ap){
-	struct node *ptr;
-	if(ap == NULL || sizeof(*ap) != sizeof(struct airplane)){
-		printf("Erro ao adicionar no\n");
-		return NULL;
+struct node *create_node(AIRPLANE *airplane) {
+	if(airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)) {
+		printf("Input error ...\n");
+		exit(1);
 	}
-	ptr = (struct node *) malloc(sizeof(struct node));
-	if(ptr == NULL){
-		printf("Erro ao adicionar no\n");
-		return NULL; 
-	}
-	ptr->ap = ap;
-	ptr->next = NULL;
-	ptr->prev = NULL;
-	return ptr;
-}
-
-
-/*
- * Erase a node from the list and its correspondent airplane struct
- * Return -1 if error, 0 if succeded
- */
-int node_destroy(struct node *node){
-	if(node == NULL || sizeof(*node) != sizeof(struct node)){
-		printf("Erro ao remover no\n");
-		return -1; 
-	}
-	if (airplane_destroyer(node->ap) == -1) return -1;
-	free(node);
-	return 0;
-}
-
-
-
-/* 
- * Creates a new list that stores airplanes structs
- * Returns NULL, in case of error
- */
-struct airplane_list *list_create(){
-	struct airplane_list *ptr = (struct airplane_list *) malloc(sizeof(struct airplane_list));
-	if(ptr == NULL){
-		printf("Erro ao criar lista de aeronaves\n");
-		return NULL;
-	}
-	ptr->head = NULL;		
-	ptr->tail = NULL;
-	return ptr;	
-}
-
-
-/*
- * Adds an airplane to the end of the airplane's list struct
- * Returns -1 if error, 0 if succeded
- */
-int list_add(struct airplane_list *list, struct airplane *airplane){
 	struct node *node;
-	if(list == NULL || sizeof(*list) != sizeof(struct airplane_list) ||
-	airplane == NULL || sizeof(*airplane) != sizeof(struct airplane)){
-		printf("Erro ao adicionar aeronave a lista\n");
-		return -1;
+	node = (struct node *) malloc(sizeof(struct node));
+	if(node == NULL){
+		printf("Error creating node ...\n");
+		exit(1);
 	}
-	node = node_create(airplane);
-	if(list_size(list)>0){	/* adds a node to a non-empty list */
-		list->tail->next = node;
-		node->prev = list->tail;
-		list->tail = node;
-		list->tail->next = NULL;
-	}
-	else{	/* adds a node to an empty list */
-		list->head = node;
-		list->tail = node;
-		list->tail->next = NULL;
-		list->tail->prev = NULL;
-	}
-	return 0;
+	node->airplane = airplane;
+	node->next = NULL;
+	node->prev = NULL;
+	return node;
 }
 
-/*
- *  Given its identifier number, removes a specific airplane from a list of airplanes
- */
-int list_remove(struct airplane_list *list, int search_key){
-	struct node *ptr, *aux;
-	if(list == NULL || sizeof(*list) != sizeof(struct airplane_list)){
-		printf("Erro ao remover aeronave da lista\n");
-		return -1;
+void destroy_node(struct node *node) {
+	if(node == NULL || sizeof(*node) != sizeof(struct node)){
+		printf("Input error ...\n");
+		exit(1);
+	}
+	destroy_airplane(node->airplane);
+	free(node);
+}
+
+AIRPLANES *init_airplanes() {
+	AIRPLANES *airplanes = (AIRPLANES *) malloc(sizeof(AIRPLANES));
+	if(airplanes == NULL) {
+		printf("Input error ...\n");
+		exit(1);
+	}
+	airplanes->head = NULL;
+	airplanes->tail = NULL;
+	return airplanes;
+}
+
+void add_airplane(AIRPLANES *airplanes, AIRPLANE *airplane) {
+	if(
+	    airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES) ||
+	    airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)
+	) {
+		printf("Input error ...\n");
+		exit(1);
+	}
+	struct node *node;
+	node = node_create(airplane);
+
+	// adds a node to a non-empty list
+	if(airplanes_size(airplanes) > 0) {
+		node->prev = airplanes->tail;
+		airplanes->tail->next = node;
+		airplanes->tail = node;
 	}
 
-	ptr = list->head;
-	while(ptr != NULL){
-		if(ptr->ap->airplane_id == search_key) break;
-		ptr = ptr->next;
+	// adds a node to an empty list
+	else {
+		airplanes->head = node;
+		airplanes->tail = node;
 	}
-	if (ptr == NULL){ /* in case the requested airplane does not exist */
-		printf("A aeronave que deseja remover nao existe\n");
-		return 0;
+}
+
+void remove_airplane(AIRPLANES *airplanes, int id) {
+	struct node *node, *aux;
+	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
+		printf("Invalid input ...\n");
+		exit(1);
 	}
 
-	aux = ptr; /* not to lose the node reference after the following changes */
+    airplane = find_airplane(airplanes, id);
+	if (!exists_airplane(airplanes, id)) {
+		printf("The airplane to be removed does not exist.\n");
+		return;
+	}
 
-	if(ptr->prev == NULL){ /* first element removal from the list */
-		if(list_size(list) == 1){
+    node = list->head;
+    while(node->airplane->id != id)
+        node = node->next;
+
+    // keep reference
+	aux = ptr;
+
+    // first element removal
+	if(node->prev == NULL){
+		if(airplanes_size(list) == 1){
 			list->head = NULL;
 			list->tail = NULL;
 		}
@@ -118,11 +96,15 @@ int list_remove(struct airplane_list *list, int search_key){
 			list->head = list->head->next;
 		}
 	}
-	else if(ptr->next == NULL){	/* last element removal from the list */
+
+	// last element removal
+	else if(ptr->next == NULL){
 		list->tail = ptr->prev;
 		ptr->prev->next = NULL;
 	}
-	else{	/* middle list removal */
+
+	// middle list removal
+	else {
 		ptr->prev->next = ptr->next;
 		ptr->next->prev = ptr->prev;
 	}
@@ -188,20 +170,14 @@ struct airplane *find_airplane(struct airplane_list *list, int search_key){
 	}
 	return ptr->ap;
 }
-/*
- * Given its identifier number, checks whether the airplane exists or not
- * Returns 0 if the airplane does not exist
- */
-int exists_airplane(struct airplane_list *list, int search_key){
-	struct node *ptr = list->head;
-	while(ptr != NULL){
-		if(ptr->ap->airplane_id == search_key) break;
-		ptr = ptr->next;
-	}
-	if (ptr == NULL) /* in case the requested airplane does not exist */
-		return 0;
-	return 1;
+
+int exists_airplane(AIRPLANES *airplanes, int id){
+	struct node *node = list->head;
+	while(node != NULL && node->airplane->id != id)
+		node = node->next;
+	return node == NULL ? 0 : 1;
 }
+
 /*
  * Gives a textual representation of the airplane list
  */

@@ -17,9 +17,9 @@ struct airplane *create_airplane(
 	struct gate *destiny_gate
 ) {
 	AIRPLANE *airplane = (AIRPLANE *) malloc (sizeof (AIRPLANE));
-	if (airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)){
+	if (airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)) {
 		printf("Error creating airplane ...\n");
-		return NULL;
+		exit(1);
 	}
 	airplane->id = id;
 	airplane->altitude = altitude;
@@ -38,16 +38,15 @@ struct airplane *create_airplane(
 	return airplane;
 }
 
-int destroy_airplane(AIRPLANE *airplane){
-	if(airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)){
+void destroy_airplane(AIRPLANE *airplane) {
+	if(airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)) {
 		printf("Invalid input ...\n");
-		return -1;
+		exit(1);
 	}
 	free(airplane);
-	return 0;
 }
 
-void airplane_toString(AIRPLANE *airplane){
+void airplane_toString(AIRPLANE *airplane) {
 	printf("******************************\n");
 	printf("ID: %d\n", airplane->id);
 	printf("POSITION X: %f\n", airplane->position_x);

@@ -14,10 +14,6 @@ typedef struct airplane_list {
     struct node *tail;	    // list tail
 } AIRPLANES;
 
-/* Create node */
-struct node *node_create(struct airplane *ap);
-int node_destroy(struct node *node);
-
 /*
  * Create an empty list of airplanes.
  */

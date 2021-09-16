@@ -64,5 +64,3 @@ struct sort_airplanes{
 };
 
 #endif
-
-
