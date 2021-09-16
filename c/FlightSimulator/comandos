@@ -1,0 +1,14 @@
+gcc -W airplanes.c airplane_list.c main.c -o exe
+
+
+gcc -ansi -Wall -pedantic airplanes.c airplane_list.c airport.c runway.c gate.c operations.c simulation.c aux_functions.c main2.c -o exe `allegro-config --libs` -lm
+
+
+
+
+
+gcc -Wall airplanes.c airplane_list.c airport.c gate.c main2.c -o exe
+
+
+
+gcc main2.c -o test `pkg-config --libs allegro-5 allegro_main-5`

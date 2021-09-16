@@ -1,0 +1,755 @@
+The system is: Darwin - 20.5.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is AppleClang, found in "/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/3.21.2/CompilerIdC/CMakeCCompilerId.o"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+The CXX compiler identification is AppleClang, found in "/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/3.21.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_67543/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_67543.dir/build.make CMakeFiles/cmTC_67543.dir/build
+Building C object CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCCompilerABI.c
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+Target: x86_64-apple-darwin20.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx11.0.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=11.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -debugger-tuning=lldb -target-linker-version 650.9 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5 -dependency-file CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdebug-compilation-dir /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -mllvm -disable-aligned-alloc-awareness=1 -o CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 12.0.5 (clang-1205.0.22.11) default target x86_64-apple-darwin20.5.0
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_67543
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67543.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -o cmTC_67543 
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+Target: x86_64-apple-darwin20.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 11.0.0 11.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -o cmTC_67543 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-650.9
+BUILD 13:09:02 May 28 2021
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include]
+    add: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include]
+    add: [/Library/Developer/CommandLineTools/usr/include]
+  end of search list found
+  collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include]
+  collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+  implicit include dirs: [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include;/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_67543/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_67543.dir/build.make CMakeFiles/cmTC_67543.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Apple clang version 12.0.5 (clang-1205.0.22.11)]
+  ignore line: [Target: x86_64-apple-darwin20.5.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx11.0.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=11.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -debugger-tuning=lldb -target-linker-version 650.9 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5 -dependency-file CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdebug-compilation-dir /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -mllvm -disable-aligned-alloc-awareness=1 -o CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 12.0.5 (clang-1205.0.22.11) default target x86_64-apple-darwin20.5.0]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_67543]
+  ignore line: [/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67543.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -o cmTC_67543 ]
+  ignore line: [Apple clang version 12.0.5 (clang-1205.0.22.11)]
+  ignore line: [Target: x86_64-apple-darwin20.5.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 11.0.0 11.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -o cmTC_67543 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-platform_version] ==> ignore
+    arg [macos] ==> ignore
+    arg [11.0.0] ==> ignore
+    arg [11.3] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_67543] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_67543.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib]
+  Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib]
+  collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks]
+  implicit libs: []
+  implicit objs: []
+  implicit dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib]
+  implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks]
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_59e0f/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_59e0f.dir/build.make CMakeFiles/cmTC_59e0f.dir/build
+Building CXX object CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+Target: x86_64-apple-darwin20.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx11.0.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=11.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -debugger-tuning=lldb -target-linker-version 650.9 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5 -dependency-file CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -fdebug-compilation-dir /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -mllvm -disable-aligned-alloc-awareness=1 -o CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 12.0.5 (clang-1205.0.22.11) default target x86_64-apple-darwin20.5.0
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_59e0f
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59e0f.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_59e0f 
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+Target: x86_64-apple-darwin20.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 11.0.0 11.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -o cmTC_59e0f -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-650.9
+BUILD 13:09:02 May 28 2021
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1]
+    add: [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include]
+    add: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include]
+    add: [/Library/Developer/CommandLineTools/usr/include]
+  end of search list found
+  collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include]
+  collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+  implicit include dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1;/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include;/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_59e0f/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_59e0f.dir/build.make CMakeFiles/cmTC_59e0f.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Apple clang version 12.0.5 (clang-1205.0.22.11)]
+  ignore line: [Target: x86_64-apple-darwin20.5.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx11.0.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=11.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -debugger-tuning=lldb -target-linker-version 650.9 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5 -dependency-file CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -fdebug-compilation-dir /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -mllvm -disable-aligned-alloc-awareness=1 -o CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 12.0.5 (clang-1205.0.22.11) default target x86_64-apple-darwin20.5.0]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_59e0f]
+  ignore line: [/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59e0f.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_59e0f ]
+  ignore line: [Apple clang version 12.0.5 (clang-1205.0.22.11)]
+  ignore line: [Target: x86_64-apple-darwin20.5.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 11.0.0 11.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -o cmTC_59e0f -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-platform_version] ==> ignore
+    arg [macos] ==> ignore
+    arg [11.0.0] ==> ignore
+    arg [11.3] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_59e0f] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_59e0f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib]
+  Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib]
+  collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks]
+  implicit libs: [c++]
+  implicit objs: []
+  implicit dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib]
+  implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks]
+
+
+Determining if files dirent.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d6443/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d6443.dir/build.make CMakeFiles/cmTC_d6443.dir/build
+Building C object CMakeFiles/cmTC_d6443.dir/ALLEGRO_HAVE_DIRENT_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_d6443.dir/ALLEGRO_HAVE_DIRENT_H.c.o -MF CMakeFiles/cmTC_d6443.dir/ALLEGRO_HAVE_DIRENT_H.c.o.d -o CMakeFiles/cmTC_d6443.dir/ALLEGRO_HAVE_DIRENT_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_DIRENT_H.c
+Linking C executable cmTC_d6443
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6443.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d6443.dir/ALLEGRO_HAVE_DIRENT_H.c.o -o cmTC_d6443 
+
+
+
+Determining if files inttypes.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_03f07/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_03f07.dir/build.make CMakeFiles/cmTC_03f07.dir/build
+Building C object CMakeFiles/cmTC_03f07.dir/ALLEGRO_HAVE_INTTYPES_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_03f07.dir/ALLEGRO_HAVE_INTTYPES_H.c.o -MF CMakeFiles/cmTC_03f07.dir/ALLEGRO_HAVE_INTTYPES_H.c.o.d -o CMakeFiles/cmTC_03f07.dir/ALLEGRO_HAVE_INTTYPES_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_INTTYPES_H.c
+Linking C executable cmTC_03f07
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03f07.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_03f07.dir/ALLEGRO_HAVE_INTTYPES_H.c.o -o cmTC_03f07 
+
+
+
+Determining if files stdbool.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ef1c7/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ef1c7.dir/build.make CMakeFiles/cmTC_ef1c7.dir/build
+Building C object CMakeFiles/cmTC_ef1c7.dir/ALLEGRO_HAVE_STDBOOL_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_ef1c7.dir/ALLEGRO_HAVE_STDBOOL_H.c.o -MF CMakeFiles/cmTC_ef1c7.dir/ALLEGRO_HAVE_STDBOOL_H.c.o.d -o CMakeFiles/cmTC_ef1c7.dir/ALLEGRO_HAVE_STDBOOL_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_STDBOOL_H.c
+Linking C executable cmTC_ef1c7
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef1c7.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ef1c7.dir/ALLEGRO_HAVE_STDBOOL_H.c.o -o cmTC_ef1c7 
+
+
+
+Determining if files stdint.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_1e2f5/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1e2f5.dir/build.make CMakeFiles/cmTC_1e2f5.dir/build
+Building C object CMakeFiles/cmTC_1e2f5.dir/ALLEGRO_HAVE_STDINT_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_1e2f5.dir/ALLEGRO_HAVE_STDINT_H.c.o -MF CMakeFiles/cmTC_1e2f5.dir/ALLEGRO_HAVE_STDINT_H.c.o.d -o CMakeFiles/cmTC_1e2f5.dir/ALLEGRO_HAVE_STDINT_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_STDINT_H.c
+Linking C executable cmTC_1e2f5
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e2f5.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1e2f5.dir/ALLEGRO_HAVE_STDINT_H.c.o -o cmTC_1e2f5 
+
+
+
+Determining if files sys/stat.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_90cb0/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_90cb0.dir/build.make CMakeFiles/cmTC_90cb0.dir/build
+Building C object CMakeFiles/cmTC_90cb0.dir/ALLEGRO_HAVE_SYS_STAT_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_90cb0.dir/ALLEGRO_HAVE_SYS_STAT_H.c.o -MF CMakeFiles/cmTC_90cb0.dir/ALLEGRO_HAVE_SYS_STAT_H.c.o.d -o CMakeFiles/cmTC_90cb0.dir/ALLEGRO_HAVE_SYS_STAT_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_SYS_STAT_H.c
+Linking C executable cmTC_90cb0
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90cb0.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_90cb0.dir/ALLEGRO_HAVE_SYS_STAT_H.c.o -o cmTC_90cb0 
+
+
+
+Determining if files sys/time.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_9166a/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9166a.dir/build.make CMakeFiles/cmTC_9166a.dir/build
+Building C object CMakeFiles/cmTC_9166a.dir/ALLEGRO_HAVE_SYS_TIME_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_9166a.dir/ALLEGRO_HAVE_SYS_TIME_H.c.o -MF CMakeFiles/cmTC_9166a.dir/ALLEGRO_HAVE_SYS_TIME_H.c.o.d -o CMakeFiles/cmTC_9166a.dir/ALLEGRO_HAVE_SYS_TIME_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_SYS_TIME_H.c
+Linking C executable cmTC_9166a
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9166a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_9166a.dir/ALLEGRO_HAVE_SYS_TIME_H.c.o -o cmTC_9166a 
+
+
+
+Determining if files time.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_0ec04/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0ec04.dir/build.make CMakeFiles/cmTC_0ec04.dir/build
+Building C object CMakeFiles/cmTC_0ec04.dir/ALLEGRO_HAVE_TIME_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_0ec04.dir/ALLEGRO_HAVE_TIME_H.c.o -MF CMakeFiles/cmTC_0ec04.dir/ALLEGRO_HAVE_TIME_H.c.o.d -o CMakeFiles/cmTC_0ec04.dir/ALLEGRO_HAVE_TIME_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_TIME_H.c
+Linking C executable cmTC_0ec04
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ec04.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0ec04.dir/ALLEGRO_HAVE_TIME_H.c.o -o cmTC_0ec04 
+
+
+
+Determining if files sys/utsname.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d7821/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d7821.dir/build.make CMakeFiles/cmTC_d7821.dir/build
+Building C object CMakeFiles/cmTC_d7821.dir/ALLEGRO_HAVE_SYS_UTSNAME_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_d7821.dir/ALLEGRO_HAVE_SYS_UTSNAME_H.c.o -MF CMakeFiles/cmTC_d7821.dir/ALLEGRO_HAVE_SYS_UTSNAME_H.c.o.d -o CMakeFiles/cmTC_d7821.dir/ALLEGRO_HAVE_SYS_UTSNAME_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_SYS_UTSNAME_H.c
+Linking C executable cmTC_d7821
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7821.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d7821.dir/ALLEGRO_HAVE_SYS_UTSNAME_H.c.o -o cmTC_d7821 
+
+
+
+Determining if files sys/types.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a6c8b/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a6c8b.dir/build.make CMakeFiles/cmTC_a6c8b.dir/build
+Building C object CMakeFiles/cmTC_a6c8b.dir/ALLEGRO_HAVE_SYS_TYPES_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_a6c8b.dir/ALLEGRO_HAVE_SYS_TYPES_H.c.o -MF CMakeFiles/cmTC_a6c8b.dir/ALLEGRO_HAVE_SYS_TYPES_H.c.o.d -o CMakeFiles/cmTC_a6c8b.dir/ALLEGRO_HAVE_SYS_TYPES_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_SYS_TYPES_H.c
+Linking C executable cmTC_a6c8b
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6c8b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a6c8b.dir/ALLEGRO_HAVE_SYS_TYPES_H.c.o -o cmTC_a6c8b 
+
+
+
+Determining if files libkern/OSAtomic.h exist passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5866c/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5866c.dir/build.make CMakeFiles/cmTC_5866c.dir/build
+Building C object CMakeFiles/cmTC_5866c.dir/ALLEGRO_HAVE_OSATOMIC_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_5866c.dir/ALLEGRO_HAVE_OSATOMIC_H.c.o -MF CMakeFiles/cmTC_5866c.dir/ALLEGRO_HAVE_OSATOMIC_H.c.o.d -o CMakeFiles/cmTC_5866c.dir/ALLEGRO_HAVE_OSATOMIC_H.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckIncludeFiles/ALLEGRO_HAVE_OSATOMIC_H.c
+Linking C executable cmTC_5866c
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5866c.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5866c.dir/ALLEGRO_HAVE_OSATOMIC_H.c.o -o cmTC_5866c 
+
+
+
+Determining if the function mkstemp exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_011a5/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_011a5.dir/build.make CMakeFiles/cmTC_011a5.dir/build
+Building C object CMakeFiles/cmTC_011a5.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=mkstemp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_011a5.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_011a5.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_011a5.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_011a5
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_011a5.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=mkstemp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_011a5.dir/CheckFunctionExists.c.o -o cmTC_011a5 
+
+
+
+Determining if the function mmap exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5087d/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5087d.dir/build.make CMakeFiles/cmTC_5087d.dir/build
+Building C object CMakeFiles/cmTC_5087d.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=mmap -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_5087d.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_5087d.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_5087d.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5087d
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5087d.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=mmap -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5087d.dir/CheckFunctionExists.c.o -o cmTC_5087d 
+
+
+
+Determining if the function mprotect exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_0e491/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0e491.dir/build.make CMakeFiles/cmTC_0e491.dir/build
+Building C object CMakeFiles/cmTC_0e491.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=mprotect -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_0e491.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_0e491.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_0e491.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0e491
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e491.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=mprotect -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0e491.dir/CheckFunctionExists.c.o -o cmTC_0e491 
+
+
+
+Determining if the function sched_yield exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7ed3b/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7ed3b.dir/build.make CMakeFiles/cmTC_7ed3b.dir/build
+Building C object CMakeFiles/cmTC_7ed3b.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=sched_yield -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_7ed3b.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_7ed3b.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_7ed3b.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7ed3b
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ed3b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=sched_yield -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7ed3b.dir/CheckFunctionExists.c.o -o cmTC_7ed3b 
+
+
+
+Determining if the function sysconf exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e6618/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e6618.dir/build.make CMakeFiles/cmTC_e6618.dir/build
+Building C object CMakeFiles/cmTC_e6618.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=sysconf -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e6618.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_e6618.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_e6618.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e6618
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6618.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=sysconf -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e6618.dir/CheckFunctionExists.c.o -o cmTC_e6618 
+
+
+
+Determining if the function fseeko exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_edfe7/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_edfe7.dir/build.make CMakeFiles/cmTC_edfe7.dir/build
+Building C object CMakeFiles/cmTC_edfe7.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=fseeko -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_edfe7.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_edfe7.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_edfe7.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_edfe7
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edfe7.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=fseeko -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_edfe7.dir/CheckFunctionExists.c.o -o cmTC_edfe7 
+
+
+
+Determining if the function ftello exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_466b5/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_466b5.dir/build.make CMakeFiles/cmTC_466b5.dir/build
+Building C object CMakeFiles/cmTC_466b5.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=ftello -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_466b5.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_466b5.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_466b5.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_466b5
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_466b5.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=ftello -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_466b5.dir/CheckFunctionExists.c.o -o cmTC_466b5 
+
+
+
+Determining if the function strerror_r exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_58efb/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_58efb.dir/build.make CMakeFiles/cmTC_58efb.dir/build
+Building C object CMakeFiles/cmTC_58efb.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=strerror_r -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_58efb.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_58efb.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_58efb.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_58efb
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58efb.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=strerror_r -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_58efb.dir/CheckFunctionExists.c.o -o cmTC_58efb 
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_50985/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_50985.dir/build.make CMakeFiles/cmTC_50985.dir/build
+Building C object CMakeFiles/cmTC_50985.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_50985.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_50985.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_50985.dir/CheckIncludeFile.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_50985
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50985.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_50985.dir/CheckIncludeFile.c.o -o cmTC_50985 
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e7dbb/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e7dbb.dir/build.make CMakeFiles/cmTC_e7dbb.dir/build
+Building C object CMakeFiles/cmTC_e7dbb.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e7dbb.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_e7dbb.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_e7dbb.dir/CheckIncludeFile.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e7dbb
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7dbb.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e7dbb.dir/CheckIncludeFile.c.o -o cmTC_e7dbb 
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2583e/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2583e.dir/build.make CMakeFiles/cmTC_2583e.dir/build
+Building C object CMakeFiles/cmTC_2583e.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_2583e.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_2583e.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_2583e.dir/CheckIncludeFile.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2583e
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2583e.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2583e.dir/CheckIncludeFile.c.o -o cmTC_2583e 
+
+
+
+Determining size of _Bool passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_cf827/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cf827.dir/build.make CMakeFiles/cmTC_cf827.dir/build
+Building C object CMakeFiles/cmTC_cf827.dir/ALLEGRO_HAVE__BOOL.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_cf827.dir/ALLEGRO_HAVE__BOOL.c.o -MF CMakeFiles/cmTC_cf827.dir/ALLEGRO_HAVE__BOOL.c.o.d -o CMakeFiles/cmTC_cf827.dir/ALLEGRO_HAVE__BOOL.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CheckTypeSize/ALLEGRO_HAVE__BOOL.c
+Linking C executable cmTC_cf827
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf827.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_cf827.dir/ALLEGRO_HAVE__BOOL.c.o -o cmTC_cf827 
+
+
+
+Performing C SOURCE FILE Test ALLEGRO_HAVE_VA_COPY succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_874ea/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_874ea.dir/build.make CMakeFiles/cmTC_874ea.dir/build
+Building C object CMakeFiles/cmTC_874ea.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DALLEGRO_HAVE_VA_COPY  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_874ea.dir/src.c.o -MF CMakeFiles/cmTC_874ea.dir/src.c.o.d -o CMakeFiles/cmTC_874ea.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_874ea
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_874ea.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_874ea.dir/src.c.o -o cmTC_874ea 
+
+
+Source file was:
+
+    #include <stdarg.h>
+    int main(void) {
+        va_list a, b;
+        va_copy(a, b);
+        return 0;
+    }
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e986e/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e986e.dir/build.make CMakeFiles/cmTC_e986e.dir/build
+Building C object CMakeFiles/cmTC_e986e.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e986e.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_e986e.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_e986e.dir/CheckIncludeFile.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e986e
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e986e.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e986e.dir/CheckIncludeFile.c.o -o cmTC_e986e 
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e9770/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e9770.dir/build.make CMakeFiles/cmTC_e9770.dir/build
+Building C object CMakeFiles/cmTC_e9770.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e9770.dir/src.c.o -MF CMakeFiles/cmTC_e9770.dir/src.c.o.d -o CMakeFiles/cmTC_e9770.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e9770
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9770.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e9770.dir/src.c.o -o cmTC_e9770 
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test FLAC_COMPILES succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e1565/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e1565.dir/build.make CMakeFiles/cmTC_e1565.dir/build
+Building C object CMakeFiles/cmTC_e1565.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DFLAC_COMPILES -I/usr/local/include -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e1565.dir/src.c.o -MF CMakeFiles/cmTC_e1565.dir/src.c.o.d -o CMakeFiles/cmTC_e1565.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e1565
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1565.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e1565.dir/src.c.o -o cmTC_e1565  /usr/local/lib/libFLAC.dylib /usr/local/lib/libogg.dylib -lm 
+
+
+Source file was:
+
+            #include <FLAC/stream_decoder.h>
+            int main(void)
+            {
+                (void)FLAC__stream_decoder_new();
+                return 0;
+            }
+Performing C SOURCE FILE Test DUMB_COMPILES succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e784a/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e784a.dir/build.make CMakeFiles/cmTC_e784a.dir/build
+Building C object CMakeFiles/cmTC_e784a.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DDUMB_COMPILES -I/usr/local/include -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e784a.dir/src.c.o -MF CMakeFiles/cmTC_e784a.dir/src.c.o.d -o CMakeFiles/cmTC_e784a.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e784a
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e784a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e784a.dir/src.c.o -o cmTC_e784a  /usr/local/lib/libdumb.a -lm 
+
+
+Source file was:
+
+            #define _FILE_OFFSET_BITS 64
+            #include <dumb.h>
+            #if (DUMB_MAJOR_VERSION) == 1
+                #error libdumb 1.0 not supported, get >= 2.0 or 0.9.3
+            #endif
+            int main(void)
+            {
+                dumb_register_stdfiles();
+                return 0;
+            }
+Performing C SOURCE FILE Test VORBIS_COMPILES succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a6c40/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a6c40.dir/build.make CMakeFiles/cmTC_a6c40.dir/build
+Building C object CMakeFiles/cmTC_a6c40.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DVORBIS_COMPILES -I/usr/local/include -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_a6c40.dir/src.c.o -MF CMakeFiles/cmTC_a6c40.dir/src.c.o.d -o CMakeFiles/cmTC_a6c40.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a6c40
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6c40.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a6c40.dir/src.c.o -o cmTC_a6c40  /usr/local/lib/libvorbisfile.dylib /usr/local/lib/libvorbis.dylib /usr/local/lib/libogg.dylib -lm 
+
+
+Source file was:
+
+            #include <vorbis/vorbisfile.h>
+            int main(void)
+            {
+                OggVorbis_File f;
+                ov_callbacks callback;
+                vorbis_info *v = 0;
+                (void)v;
+                ov_info(&f, -1);
+                callback = OV_CALLBACKS_NOCLOSE;
+                return 0;
+            }
+Performing C SOURCE FILE Test OPUS_COMPILES succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_3f1fc/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3f1fc.dir/build.make CMakeFiles/cmTC_3f1fc.dir/build
+Building C object CMakeFiles/cmTC_3f1fc.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DOPUS_COMPILES -I/usr/local/include -I/usr/local/include/opus -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_3f1fc.dir/src.c.o -MF CMakeFiles/cmTC_3f1fc.dir/src.c.o.d -o CMakeFiles/cmTC_3f1fc.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c:8:25: warning: variable 'f' is uninitialized when used here [-Wuninitialized]
+                op_free(f);
+                        ^
+/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c:5:31: note: initialize the variable 'f' to silence this warning
+                OggOpusFile *f;
+                              ^
+                               = NULL
+1 warning generated.
+Linking C executable cmTC_3f1fc
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f1fc.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3f1fc.dir/src.c.o -o cmTC_3f1fc  /usr/local/lib/libopusfile.dylib /usr/local/lib/libopus.dylib /usr/local/lib/libogg.dylib -lm 
+
+
+Source file was:
+
+            #include <opus/opusfile.h>
+            int main(void)
+            {
+                OggOpusFile *f;
+                OpusHead *v = 0;
+                (void)v;
+                op_free(f);
+                return 0;
+            }
+Performing C SOURCE FILE Test TTF_COMPILES succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_638f9/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_638f9.dir/build.make CMakeFiles/cmTC_638f9.dir/build
+Building C object CMakeFiles/cmTC_638f9.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DTTF_COMPILES -I/usr/local/include/freetype2 -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_638f9.dir/src.c.o -MF CMakeFiles/cmTC_638f9.dir/src.c.o.d -o CMakeFiles/cmTC_638f9.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c:9:26: warning: unused variable 'e' [-Wunused-variable]
+                FT_Error e;
+                         ^
+/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c:13:44: warning: variable 'ft_index' is uninitialized when used here [-Wuninitialized]
+                return FT_Load_Glyph(face, ft_index, ft_load_flags);
+                                           ^~~~~~~~
+/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c:10:29: note: initialize the variable 'ft_index' to silence this warning
+                int ft_index;
+                            ^
+                             = 0
+/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c:13:54: warning: variable 'ft_load_flags' is uninitialized when used here [-Wuninitialized]
+                return FT_Load_Glyph(face, ft_index, ft_load_flags);
+                                                     ^~~~~~~~~~~~~
+/Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c:8:39: note: initialize the variable 'ft_load_flags' to silence this warning
+                FT_Int32 ft_load_flags;
+                                      ^
+                                       = 0
+3 warnings generated.
+Linking C executable cmTC_638f9
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_638f9.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_638f9.dir/src.c.o -o cmTC_638f9  /usr/local/lib/libfreetype.dylib 
+
+
+Source file was:
+
+            #include <ft2build.h>
+            #include FT_FREETYPE_H
+            int main(void) {
+                FT_Library ft;
+                FT_Open_Args args;
+                FT_Face face;
+                FT_Int32 ft_load_flags;
+                FT_Error e;
+                int ft_index;
+                FT_Init_FreeType(&ft);
+                FT_Open_Face(ft, &args, 0, &face);
+                return FT_Load_Glyph(face, ft_index, ft_load_flags);
+            }
+Performing C SOURCE FILE Test PHYSFS_IMPLICIT_ZLIB succeeded with the following output:
+Change Dir: /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ddcef/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ddcef.dir/build.make CMakeFiles/cmTC_ddcef.dir/build
+Building C object CMakeFiles/cmTC_ddcef.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DPHYSFS_IMPLICIT_ZLIB -I/usr/local/include -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_ddcef.dir/src.c.o -MF CMakeFiles/cmTC_ddcef.dir/src.c.o.d -o CMakeFiles/cmTC_ddcef.dir/src.c.o -c /Users/renato/Workspace/github/university/c/FlightSimulator/allegro-5.2.7.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ddcef
+/usr/local/Cellar/cmake/3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddcef.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -fno-common -msse -W -Wall -Wpointer-arith -Wmissing-declarations -Wstrict-prototypes  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ddcef.dir/src.c.o -o cmTC_ddcef  /usr/local/lib/libphysfs.dylib 
+
+
+Source file was:
+
+            #include <physfs.h>
+
+            int main(int argc, char **argv)
+            {
+                (void)argc;
+                PHYSFS_init(argv[0]);
+                PHYSFS_deinit();
+                return 0;
+            }
