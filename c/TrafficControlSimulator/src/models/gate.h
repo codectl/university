@@ -2,27 +2,6 @@
 #define _GATE_H
 
 /*
- * Representation of a gate.
- */
-struct gate {
-	char type;
-	int number;
-	float position_x;
-	float position_y;
-	int size;
-	int width;
-	int orientation;
-	int color;
-	int altitude;
-	int speed;
-	int n_points;
-	float *points;
-	int gen_1;
-	int gen_2;
-	char gen_type;
-};
-
-/*
  * Create a new gate.
  */
 GATE *create_gate(
@@ -52,7 +31,7 @@ GATE *get_gate(AIRPORT *airport, int id, char type);
 /*
  * Destroy a gate.
  */
-int destroy_gate(GATE *gate);
+void destroy_gate(GATE *gate);
 
 /*
  * Count the number of represented gates in a file.

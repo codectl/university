@@ -2,26 +2,6 @@
 #define _RUNWAY_H
 
 /*
- * Representation of a runway.
- */
-typedef struct runway {
-	int id;
-	float x0;
-	float y0;
-	float x1;
-	float y1;
-	int width;
-	int color;
-	int n_marks;
-	int mark_arrow;
-	int altitude;
-	int speed;
-	int gen_1;
-	int gen_2;
-	char gen_type;
-} RUNWAY;
-
-/*
  * Create a new runway.
  */
 RUNWAY *create_runway(
@@ -66,6 +46,6 @@ int exists_runway(AIRPORT *airport, int n, int id);
 /*
  * Textual representation of a runway.
  */
-void runway_toString(struct runway *track);
+void runway_toString(RUNWAY *runway);
 
 #endif

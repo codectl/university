@@ -2,11 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "structs.h"
 #include "runway.h"
 
 #define MAX_DIMENSION 100
 
-struct runway *create_runway(
+RUNWAY *create_runway(
     int id,
     float x0,
     float y0,
@@ -56,7 +57,7 @@ RUNWAY *get_runway(AIRPORT *airport, int id) {
 }
 
 void destroy_runway(RUNWAY *runway) {
-	if(airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)) {
+	if(runway == NULL || sizeof(*runway) != sizeof(RUNWAY)) {
 		printf("Invalid input ...\n");
 		exit(1);
 	}
@@ -71,7 +72,7 @@ int count_runways(char *filename) {
 	char next_line[MAX_DIMENSION], *token;
 	int count = 0;
 
-	if ((file = fopen(file_name, "r")) == NULL){
+	if ((file = fopen(filename, "r")) == NULL){
 		printf("Error opening file ...\n");
         exit(1);
 	}
@@ -92,7 +93,7 @@ int count_runways(char *filename) {
 int exists_runway(AIRPORT *airport, int n, int id){
 	int i;
 	for(i = 0; i < n; i++)
-		if(airport->runways[i]->id == id_runway)
+		if(airport->runways[i]->id == id)
 			return 1;
 	return 0;
 }

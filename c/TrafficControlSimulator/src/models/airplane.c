@@ -11,10 +11,10 @@ struct airplane *create_airplane(
 	int ref_orientation,
 	float position_x,
 	float position_y,
-	struct runway *origin_track,
-	struct gate *origin_gate,
-	struct runway *destiny_track,
-	struct gate *destiny_gate
+	RUNWAY *departure_runway,
+	RUNWAY *arrival_runway,
+	GATE *departure_gate,
+	GATE *arrival_gate
 ) {
 	AIRPLANE *airplane = (AIRPLANE *) malloc(sizeof(AIRPLANE));
 	if (airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)) {
@@ -31,10 +31,10 @@ struct airplane *create_airplane(
 	airplane->ref_orientation = ref_orientation;
 	airplane->position_x = position_x;
 	airplane->position_y = position_y;
-	airplane->origin_track = origin_track;
-	airplane->origin_gate = origin_gate;
-	airplane->destiny_track = destiny_track;
-	airplane->destiny_gate = destiny_gate;
+	airplane->departure_runway = departure_runway;
+	airplane->arrival_runway = arrival_runway;
+	airplane->departure_gate = departure_gate;
+	airplane->arrival_gate = arrival_gate;
 
     printf("Airplane '%d' created.\n", id);
 	return airplane;

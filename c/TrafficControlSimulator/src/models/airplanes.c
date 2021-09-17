@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "airplanes.h"
-
 struct node *create_node(AIRPLANE *airplane) {
 	if(airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)) {
 		printf("Input error ...\n");

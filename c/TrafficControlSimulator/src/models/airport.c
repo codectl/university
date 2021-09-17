@@ -38,8 +38,8 @@ AIRPORT *create_airport(char *filename){
         exit(1);
     }
 
-	n_gates = gate_count(file_name);
-	n_runways = runway_count(file_name);
+	n_gates = count_gates(filename);
+	n_runways = count_runways(filename);
 	airport->n_gates = n_gates;
 	airport->n_runways = n_runways;
 	airport->gates = (GATE **) malloc (sizeof(RUNWAY *) * n_gates);
