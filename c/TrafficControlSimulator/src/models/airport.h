@@ -9,7 +9,7 @@ AIRPORT *create_airport(char *filename);
 /*
  * Destroy an airport.
  */
-void airport_destroy(AIRPORT *airport);
+void destroy_airport(AIRPORT *airport);
 
 /*
  * Textual representation of an airport.

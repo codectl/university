@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "structs.h"
+
 #define MAX_DIMENSION 100
 
 GATE *create_gate(
@@ -13,8 +15,8 @@ GATE *create_gate(
     int width,
     int orientation,
     int color,
-    int alt,
-    int spd,
+    int altitude,
+    int speed,
     int n_points,
     float *points,
     int gen_1,
@@ -35,14 +37,14 @@ GATE *create_gate(
 	gate->width = width;
 	gate->orientation = orientation;
 	gate->color = color;
-	gate->alt = alt;
-	gate->spd = spd;
+	gate->altitude = altitude;
+	gate->speed = speed;
 	gate->n_points = n_points;
 	if(n_points == 0)
-		points = NULL;
+		gate->points = NULL;
 	else {
 	    int i;
-		gate->points = (float *) malloc(sizeof (float) * n_points * 2);
+		gate->points = (float *) malloc(sizeof(float) * n_points * 2);
 		for(i = 0; i < n_points * 2; i++)
 			gate->points[i] = points[i];
 	}
@@ -50,7 +52,7 @@ GATE *create_gate(
 	gate->gen_2 = gen_2;
 	gate->gen_type = gen_type;
 
-    printf("Gate '%d' created.\n", id);
+    printf("Gate '%d' created.\n", number);
 	return gate;
 }
 
@@ -68,18 +70,18 @@ void destroy_gate(GATE *gate){
 		exit(1);
 	}
 
-    int id = gate->id;
+    int number = gate->number;
 	free(gate->points);
 	free(gate);
-    printf("Gate '%d' destroyed.\n", id);
+    printf("Gate '%d' destroyed.\n", number);
 }
 
 int count_gates(char *filename){
 	FILE *file;
-	char next_line[MAX_DIMENSION], *tok;
+	char next_line[MAX_DIMENSION], *token;
 	int count = 0;
 
-	if ((file = fopen(file_name, "r")) == NULL){
+	if ((file = fopen(filename, "r")) == NULL){
 		printf("Error opening file ...\n");
         exit(1);
 	}
@@ -99,7 +101,7 @@ int count_gates(char *filename){
 
 int exists_gate(AIRPORT *airport, int n, int id, char type){
 	int i;
-	for(i=0; i<n_gates;i++)
+	for(i = 0; i < n; i++)
 		if(airport->gates[i]->number == id && airport->gates[i]->type == type)
 			return 1;
 	return 0;
@@ -111,8 +113,8 @@ void gate_toString(struct gate *gate){
 	printf("GATE %d of type %c\n", gate->number, gate->type);
 	printf("Position in coordinates (%f,%f)\n", gate->position_x, gate->position_y);
 	printf("Orientation: %d; Width: %d; Size: %d; Color (int): %d\n", gate->orientation, gate->width, gate->size, gate->color);
-	printf("Altidude : %d\n", gate->alt);
-	printf("Speed : %d\n", gate->spd);
+	printf("Altitude : %d\n", gate->altitude);
+	printf("Speed : %d\n", gate->speed);
 	for(i=0, j=0; i<gate->n_points; i++, j+=2)
 		printf("Point %d with coordinate (%f,%f)\n", i+1, gate->points[j], gate->points[j+1]);
 	if(gate->type == 'A')

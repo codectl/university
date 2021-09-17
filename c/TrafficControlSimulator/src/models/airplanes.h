@@ -1,8 +1,6 @@
 #ifndef _AIRPLANES_H
 #define _AIRPLANES_H
 
-#include "airplane.h"
-
 struct node {
     AIRPLANE *airplane;	    // node element (airplane)
     struct node *next;	    // next element

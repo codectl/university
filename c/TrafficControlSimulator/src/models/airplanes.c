@@ -1,6 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "structs.h"
+#include "airplane.h"
+#include "airplanes.h"
+
 struct node *create_node(AIRPLANE *airplane) {
 	if(airplane == NULL || sizeof(*airplane) != sizeof(AIRPLANE)) {
 		printf("Input error ...\n");
@@ -39,7 +43,7 @@ AIRPLANES *init_airplanes() {
 	return airplanes;
 }
 
-AIRPLANE *get_airplane(AIRPLANES *airplanes, int search_key) {
+AIRPLANE *get_airplane(AIRPLANES *airplanes, int id) {
 	if(airplanes == NULL || sizeof(*airplanes) != sizeof(AIRPLANES)) {
 		printf("Invalid input ...\n");
 		exit(1);
@@ -66,7 +70,7 @@ void add_airplane(AIRPLANES *airplanes, AIRPLANE *airplane) {
 		exit(1);
 	}
 	struct node *node;
-	node = node_create(airplane);
+	node = create_node(airplane);
 
 	// adds a node to a non-empty list
 	if(airplanes_size(airplanes) > 0) {

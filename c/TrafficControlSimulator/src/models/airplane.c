@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct airplane *create_airplane(
+#include "structs.h"
+
+AIRPLANE *create_airplane(
     int id,
     int altitude,
 	int speed,
@@ -62,9 +64,9 @@ void airplane_toString(AIRPLANE *airplane) {
 	printf("REF_SPEED: %d\n", airplane->ref_speed);
 	printf("REF_ALTITUDE: %d\n", airplane->ref_altitude);
 	printf("REF_ORIENTATION: %d\n", airplane->ref_orientation);
-    printf("DEPARTURE RUNWAY: %d\n", airplane->origin_track->id);
-    printf("DEPARTURE GATE: %d\n", airplane->origin_gate->number);
-    printf("ARRIVAL RUNWAY: %d\n", airplane->destiny_track->id);
-    printf("ARRIVAL GATE: %d\n", airplane->destiny_gate->number);
+    printf("DEPARTURE RUNWAY: %d\n", airplane->departure_runway->id);
+    printf("DEPARTURE GATE: %d\n", airplane->departure_gate->number);
+    printf("ARRIVAL RUNWAY: %d\n", airplane->arrival_runway->id);
+    printf("ARRIVAL GATE: %d\n", airplane->arrival_gate->number);
 	printf("\n");
 }

@@ -1,23 +1,4 @@
 /*
- * Representation of an airplane.
- */
-typedef struct airplane {
-    int id;
-    int altitude;
-	int speed;
-	int orientation;
-	int ref_speed;
-	int ref_altitude;
-	int ref_orientation;
-	float position_x;
-	float position_y;
-	struct runway *origin_track;
-	struct gate *origin_gate;
-	struct runway *destiny_track;
-	struct gate *destiny_gate;
-} AIRPLANE;
-
-/*
  * Representation of a gate.
  */
 typedef struct gate {
@@ -60,9 +41,29 @@ typedef struct runway {
 } RUNWAY;
 
 /*
+ * Representation of an airplane.
+ */
+typedef struct airplane {
+    int id;
+    int altitude;
+	int speed;
+	int orientation;
+	int ref_speed;
+	int ref_altitude;
+	int ref_orientation;
+	float position_x;
+	float position_y;
+	RUNWAY *departure_runway;
+	RUNWAY *arrival_runway;
+	GATE *departure_gate;
+	GATE *arrival_gate;
+} AIRPLANE;
+
+/*
  * Representation of an airport.
  */
 typedef struct airport {
+    int id;
 	int x;
 	int y;
 	int z;
@@ -72,3 +73,4 @@ typedef struct airport {
 	RUNWAY **runways;
 	GATE **gates;
 } AIRPORT;
+

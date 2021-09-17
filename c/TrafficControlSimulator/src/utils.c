@@ -28,22 +28,22 @@
  *	 15 - white
  */
 int color_to_int(char *name){
-	if (!strcmp (color_name, "black")) return 0;	
-	else if (!strcmp (color_name, "dark_blue")) return 1;	
-	else if (!strcmp (color_name, "dark_green")) return 2;	
-	else if (!strcmp (color_name, "dark_cyan")) return 3;	
-	else if (!strcmp (color_name, "dark_red")) return 4;	
-	else if (!strcmp (color_name, "dark_mangenta")) return 5;	
-	else if (!strcmp (color_name, "orange")) return 6;	
-	else if (!strcmp (color_name, "gray")) return 7;	
-	else if (!strcmp (color_name, "dark_gray")) return 8;	
-	else if (!strcmp (color_name, "blue")) return 9;	
-	else if (!strcmp (color_name, "green")) return 10;	
-	else if (!strcmp (color_name, "cyan")) return 11;	
-	else if (!strcmp (color_name, "red")) return 12;	
-	else if (!strcmp (color_name, "magenta")) return 13;	
-	else if (!strcmp (color_name, "yellow")) return 14;	
-	else if (!strcmp (color_name, "white")) return 15;
+	if (!strcmp (name, "black")) return 0;
+	else if (!strcmp (name, "dark_blue")) return 1;
+	else if (!strcmp (name, "dark_green")) return 2;
+	else if (!strcmp (name, "dark_cyan")) return 3;
+	else if (!strcmp (name, "dark_red")) return 4;
+	else if (!strcmp (name, "dark_mangenta")) return 5;
+	else if (!strcmp (name, "orange")) return 6;
+	else if (!strcmp (name, "gray")) return 7;
+	else if (!strcmp (name, "dark_gray")) return 8;
+	else if (!strcmp (name, "blue")) return 9;
+	else if (!strcmp (name, "green")) return 10;
+	else if (!strcmp (name, "cyan")) return 11;
+	else if (!strcmp (name, "red")) return 12;
+	else if (!strcmp (name, "magenta")) return 13;
+	else if (!strcmp (name, "yellow")) return 14;
+	else if (!strcmp (name, "white")) return 15;
 	else return -1;
 }
 

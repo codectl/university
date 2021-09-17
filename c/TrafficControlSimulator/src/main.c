@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
 	AIRPLANES *airplanes = init_airplanes();
 
-	add_airplane(airplanes, create_airplane(1, 100, 110, 20, 100, 110, 20, 50, 50, departure_runway, arrival_runway, departure_gate, arrival_gate));
+//	add_airplane(airplanes, create_airplane(1, 100, 110, 20, 100, 110, 20, 50, 50, departure_runway, arrival_runway, departure_gate, arrival_gate));
 	airplanes_toString(airplanes);
 	remove_airplanes(airplanes);
 
