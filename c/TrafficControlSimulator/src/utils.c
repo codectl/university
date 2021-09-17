@@ -5,7 +5,6 @@
 
 #define MAX_DIMENSION 100
 
-
 /*
  * Convert color name to its integer representation.
  * Returns -1 by default.
