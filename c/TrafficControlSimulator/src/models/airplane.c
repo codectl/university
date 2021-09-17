@@ -54,7 +54,7 @@ void destroy_airplane(AIRPLANE *airplane) {
 }
 
 void airplane_toString(AIRPLANE *airplane) {
-	printf("******************************\n");
+	printf("\n### AIRPLANE '%d' ###\n", airplane->id);
 	printf("ID: %d\n", airplane->id);
 	printf("POSITION X: %f\n", airplane->position_x);
 	printf("POSITION Y: %f\n", airplane->position_y);

@@ -16,9 +16,4 @@ void destroy_airport(AIRPORT *airport);
  */
 void airport_toString(AIRPORT *airport);
 
-/*
- * Graphical representation of an airport.
- */
-void airport_gui(AIRPORT *airport);
-
 #endif

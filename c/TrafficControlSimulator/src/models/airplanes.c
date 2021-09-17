@@ -176,6 +176,8 @@ void airplanes_toString(AIRPLANES *airplanes){
 		exit(1);
 	}
 
+	printf("\nDisplay info on %d airplanes ...\n", airplanes_size(airplanes));
+
 	struct node *node = airplanes->head;
 	if(node == NULL) {
 		printf("No airplanes\n");
